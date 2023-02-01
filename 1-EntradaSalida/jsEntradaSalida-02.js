@@ -8,3 +8,4 @@ function mostrar()
 	alert(nombre);
 }
 
+alert(nombre);
