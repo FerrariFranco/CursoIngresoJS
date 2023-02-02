@@ -9,7 +9,7 @@ function Rectangulo ()
     let numUno;
     let numDos;
     let suma;
-    let Rectangulo;
+    let Perimetro;
     let alambre;
     let mensaje;
 
@@ -17,8 +17,8 @@ function Rectangulo ()
     numDos = parseInt(document.getElementById("txtIdAncho").value);
 
     suma = numUno + numDos;
-    Rectangulo = suma * 2;
-    alambre = Rectangulo * 3;
+    Perimetro = suma * 2;
+    alambre = Perimetro * 3;
 
     mensaje = "Hace falta  "+ alambre +" metros de alambre";
 

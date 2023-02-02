@@ -34,7 +34,7 @@ function SacarResto()
 	promedioSuma = suma / 2;
 	moduloDePrimerNum = numUno % numDos
 	
-    mensaje = "El suma es: " + suma + ", " + "el promedio es: " + promedioSuma + ", " + "el modulo es numero es: " + moduloDePrimerNum;
+    mensaje = "El suma es: " + suma + ", " + "el promedio es: " + promedioSuma + ", " + "el modulo es: " + moduloDePrimerNum;
 
 	alert(mensaje);
 }
