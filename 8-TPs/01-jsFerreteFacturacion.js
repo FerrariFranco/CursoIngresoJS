@@ -6,15 +6,15 @@ C.    ingresar tres precios de productos  y mostrar precio final (más IVA 21%).
 function Sumar () 
 {
     let numUno;
-    let num2;
-    let num3;
+    let numDos;
+    let numTres;
     let suma;
     let mensaje;
 
     numUno = parseInt(document.getElementById("txtIdPrecioUno").value);
-    num2 = parseInt(document.getElementById("txtIdPrecioDos").value);
-    num3 = parseInt(document.getElementById("txtIdPrecioTres").value);
-    suma = numUno + num2 + num3;
+    numDos = parseInt(document.getElementById("txtIdPrecioDos").value);
+    numTres = parseInt(document.getElementById("txtIdPrecioTres").value);
+    suma = numUno + numDos + numTres;
 
     mensaje = "El precio final es "+ suma;
 
@@ -24,15 +24,15 @@ function Promedio ()
 {
 
     let numUno;
-    let num2;
-    let num3;
+    let numDos;
+    let numTres;
     let promedio;
     let mensaje;
 
     numUno = parseInt(document.getElementById("txtIdPrecioUno").value);
-    num2 = parseInt(document.getElementById("txtIdPrecioDos").value);
-    num3 = parseInt(document.getElementById("txtIdPrecioTres").value);
-    promedio = (numUno + num2 + num3)/3;
+    numDos = parseInt(document.getElementById("txtIdPrecioDos").value);
+    numTres = parseInt(document.getElementById("txtIdPrecioTres").value);
+    promedio = (numUno + numDos + numTres)/3;
 
     mensaje = "El precio final es  "+ promedio;
 
@@ -41,16 +41,16 @@ function Promedio ()
 function PrecioFinal () 
 {
     let numUno;
-    let num2;
-    let num3;
+    let numDos;
+    let numTres;
     let precio;
     let precioFinal;
     let mensaje;
 
     numUno = parseInt(document.getElementById("txtIdPrecioUno").value);
-    num2 = parseInt(document.getElementById("txtIdPrecioDos").value);
-    num3 = parseInt(document.getElementById("txtIdPrecioTres").value);
-    precio = (numUno + num2 + num3);
+    numDos = parseInt(document.getElementById("txtIdPrecioDos").value);
+    numTres = parseInt(document.getElementById("txtIdPrecioTres").value);
+    precio = (numUno + numDos + numTres);
     precioFinal = precio + (precio * 0.21);
 
     mensaje = "El precio final es "+ precioFinal;

@@ -13,7 +13,9 @@ function mostrar()
 
 	alert(mensaje);
 }
-/*{	
+/*
+//Ejercicio 5 bis
+{	
     let nombre;
 	let edad;
 	let mensaje;

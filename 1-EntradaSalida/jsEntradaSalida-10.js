@@ -4,28 +4,32 @@ Transformarlo a entero (parseInt), luego
 mostrar el importe con un Descuento del 25 %
 en el cuadro de texto "RESULTADO"*/
 function mostrarAumento()
-{
-	let importe;
-	let descuento;
-	let porcentaje = -25
+ {
+ 	let importe;
+ 	let descuento;
+ 	let porcentaje = -25
 
-	importe = parseInt(document.getElementById("txtIdImporte").value);
+ 	importe = parseInt(document.getElementById("txtIdImporte").value);
 
-	descuento = importe + (importe * (porcentaje /100));
+ 	descuento = importe + (importe * (porcentaje /100));
 
-	document.getElementById("txtIdResultado").value = descuento;
-}
-/*{
-	let importe;
-	let descuentoAplicado;
-	let cuanto
+ 	document.getElementById("txtIdResultado").value = descuento;
+ }
 
-	importe = parseInt(document.getElementById("txtIdImporte").value);
+// Ejercicio 10 bis
+// {
+// 	let importe;
+// 	let descuentoAplicado;
+// 	let cuanto
+
+// 	importe = parseInt(document.getElementById("txtIdImporte").value);
      
-	cuanto = prompt("Cuanto descuento solicita? (sin el simbolo %)");
+// 	cuanto = prompt("Cuanto descuento solicita? (sin el simbolo %)");
 
-	descuentoAplicado = importe - (importe * (cuanto / 100)) + "$"; 
+// 	cuanto = parseInt(cuanto);
 
-	document.getElementById("txtIdResultado").value = descuentoAplicado;
-}
-*/
+// 	descuentoAplicado = importe - (importe * (cuanto / 100)) + "$"; 
+
+// 	document.getElementById("txtIdResultado").value = descuentoAplicado;
+// }
+

@@ -18,7 +18,9 @@ function SacarResto()
 
 	alert(mensaje);
 }
-/*{
+/*
+//Ejercicio 8 bis
+{
 	let numUno;
 	let numDos;
 	let suma;
