@@ -6,31 +6,31 @@ ej.: "El resto es 0 ."*/
 function SacarResto()
 
 {
-	let num1;
-	let num2;
+	let numUno;
+	let numDos;
 	let resto;
 	let mensaje;
 
-	num1 = parseInt(document.getElementById("txtIdNumeroDividendo").value);
-    num2 = parseInt(document.getElementById("txtIdNumeroDivisor").value);
-	resto = num1 % num2;
+	numUno = parseInt(document.getElementById("txtIdNumeroDividendo").value);
+    numDos = parseInt(document.getElementById("txtIdNumeroDivisor").value);
+	resto = numUno % numDos;
     mensaje = "El resto es: " + resto;
 
 	alert(mensaje);
 }
 /*{
-	let num1;
-	let num2;
+	let numUno;
+	let numDos;
 	let suma;
 	let promedioSuma
 	let moduloDePrimerNum;
 	let mensaje;
 
-	num1 = parseInt(document.getElementById("txtIdNumeroDividendo").value);
-    num2 = parseInt(document.getElementById("txtIdNumeroDivisor").value);
-	suma = num1 + num2;
+	numUno = parseInt(document.getElementById("txtIdNumeroDividendo").value);
+    numDos = parseInt(document.getElementById("txtIdNumeroDivisor").value);
+	suma = numUno + numDos;
 	promedioSuma = suma / 2;
-	moduloDePrimerNum = ((num1 % num2 ) + num2 ) % num2;
+	moduloDePrimerNum = numUno % numDos
 	
     mensaje = "El suma es: " + suma + ", " + "el promedio es: " + promedioSuma + ", " + "el modulo es numero es: " + moduloDePrimerNum;
 

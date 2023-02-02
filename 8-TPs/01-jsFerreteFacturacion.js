@@ -5,16 +5,16 @@ C.    ingresar tres precios de productos  y mostrar precio final (más IVA 21%).
 */
 function Sumar () 
 {
-    let num1;
+    let numUno;
     let num2;
     let num3;
     let suma;
     let mensaje;
 
-    num1 = parseInt(document.getElementById("txtIdPrecioUno").value);
+    numUno = parseInt(document.getElementById("txtIdPrecioUno").value);
     num2 = parseInt(document.getElementById("txtIdPrecioDos").value);
     num3 = parseInt(document.getElementById("txtIdPrecioTres").value);
-    suma = num1 + num2 + num3;
+    suma = numUno + num2 + num3;
 
     mensaje = "El precio final es "+ suma;
 
@@ -23,16 +23,16 @@ function Sumar ()
 function Promedio () 
 {
 
-    let num1;
+    let numUno;
     let num2;
     let num3;
     let promedio;
     let mensaje;
 
-    num1 = parseInt(document.getElementById("txtIdPrecioUno").value);
+    numUno = parseInt(document.getElementById("txtIdPrecioUno").value);
     num2 = parseInt(document.getElementById("txtIdPrecioDos").value);
     num3 = parseInt(document.getElementById("txtIdPrecioTres").value);
-    promedio = (num1 + num2 + num3)/3;
+    promedio = (numUno + num2 + num3)/3;
 
     mensaje = "El precio final es  "+ promedio;
 
@@ -40,17 +40,17 @@ function Promedio ()
 }
 function PrecioFinal () 
 {
-    let num1;
+    let numUno;
     let num2;
     let num3;
     let precio;
     let precioFinal;
     let mensaje;
 
-    num1 = parseInt(document.getElementById("txtIdPrecioUno").value);
+    numUno = parseInt(document.getElementById("txtIdPrecioUno").value);
     num2 = parseInt(document.getElementById("txtIdPrecioDos").value);
     num3 = parseInt(document.getElementById("txtIdPrecioTres").value);
-    precio = (num1 + num2 + num3);
+    precio = (numUno + num2 + num3);
     precioFinal = precio + (precio * 0.21);
 
     mensaje = "El precio final es "+ precioFinal;

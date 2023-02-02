@@ -6,17 +6,17 @@ C.    Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 d
 
 function Rectangulo () 
 {
-    let num1;
-    let num2;
+    let numUno;
+    let numDos;
     let suma;
     let Rectangulo;
     let alambre;
     let mensaje;
 
-    num1 = parseInt(document.getElementById("txtIdLargo").value);
-    num2 = parseInt(document.getElementById("txtIdAncho").value);
+    numUno = parseInt(document.getElementById("txtIdLargo").value);
+    numDos = parseInt(document.getElementById("txtIdAncho").value);
 
-    suma = num1 + num2;
+    suma = numUno + numDos;
     Rectangulo = suma * 2;
     alambre = Rectangulo * 3;
 
@@ -42,17 +42,17 @@ function Circulo ()
 }
 function Materiales () 
 {
-    let num1;
-    let num2;
+    let numUno;
+    let numDos;
     let m2;
     let cal;
     let cemento;
     let mensaje;
 
-    num1 = parseFloat(document.getElementById("txtIdLargo").value);
-    num2 = parseFloat(document.getElementById("txtIdAncho").value);
+    numUno = parseFloat(document.getElementById("txtIdLargo").value);
+    numDos = parseFloat(document.getElementById("txtIdAncho").value);
 
-    m2 = num1 * num2;
+    m2 = numUno * numDos;
     cemento= m2 * 2;
     cal = m2 * 3;
 
