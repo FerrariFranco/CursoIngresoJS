@@ -13,4 +13,19 @@ function mostrar()
 
 	alert(mensaje);
 }
+/*{	
+    let nombre;
+	let edad;
+	let mensaje;
+	let apellido
+
+
+	apellido = prompt("Ingrese su apellido");
+	nombre = document.getElementById("txtIdNombre").value;
+    edad = document.getElementById("txtIdEdad").value;
+	mensaje = apellido + ", usted se llama " + nombre + " y tiene " + edad + " años";
+
+	alert(mensaje);
+}*/
+
 

@@ -14,3 +14,17 @@ function mostrarAumento()
 
 	document.getElementById("txtIdResultado").value = descuento;
 }
+/*{
+	let importe;
+	let descuentoAplicado;
+	let cuanto
+
+	importe = parseInt(document.getElementById("txtIdImporte").value);
+     
+	cuanto = prompt("Cuanto descuento solicita? (sin el simbolo %)");
+
+	descuentoAplicado = importe - (importe * (cuanto / 100)) + "$"; 
+
+	document.getElementById("txtIdResultado").value = descuentoAplicado;
+}
+*/
