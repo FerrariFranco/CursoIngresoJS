@@ -3,13 +3,15 @@ function mostrar()
 	//tomo la edad  
 	let edad = document.getElementById("txtIdEdad").value;
 
+
+if(edad > -1){
 	if (edad == 15) {
 		alert("Hola niña bonita");
 	} else {
 		alert("Hola");
 	};
-	
-	
-  
 
-}//FIN DE LA FUNCIÓN
+}
+else(alert("No es una edad valida"))
+}
+//FIN DE LA FUNCIÓN

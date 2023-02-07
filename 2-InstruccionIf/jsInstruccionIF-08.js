@@ -1,5 +1,7 @@
 function mostrar()
 {
+
+if(edad > -1){
 	let edad = document.getElementById("txtIdEdad").value;
 	let estadoCivil = document.getElementById("estadoCivil").value;
 
@@ -9,4 +11,6 @@ function mostrar()
 	else{
 		console.log("")
 	}
+}
+else(alert("No es una edad valida"))
 }
