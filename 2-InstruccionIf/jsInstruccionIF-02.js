@@ -1,3 +1,4 @@
+/// Franco Ferrari Ejercicio if 2
 function mostrar()
 {
 	let edad = document.getElementById("txtIdEdad").value;

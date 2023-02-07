@@ -1,3 +1,4 @@
+/// Franco Ferrari Ejercicio if 1
 function mostrar()
 {
 	//tomo la edad  

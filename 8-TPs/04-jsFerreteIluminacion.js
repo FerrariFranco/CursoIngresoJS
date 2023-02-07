@@ -16,6 +16,7 @@ function CalcularPrecio ()
     let precio
     let precioTotal
     let impuesto
+    let mensaje
 
     
     cantLamp =document.getElementById("txtIdCantidad").value
@@ -23,79 +24,88 @@ function CalcularPrecio ()
     marcaLamp = document.getElementById("Marca").value
 
     precio = 35
-    
-
-    
-
-    
-
-
 
 
     if (cantLamp >= 6){
       
         precioTotal = cantLamp * precio
         
-        descuento = precioTotal - precioTotal * 0.50 + "$"
+        descuento = precioTotal - precioTotal * 0.50
+
+        mensaje = descuento + "$"
        
-       document.getElementById("txtIdprecioDescuento").value = descuento
+       document.getElementById("txtIdprecioDescuento").value = mensaje
        
     } else if (cantLamp == 5 && marcaLamp == "ArgentinaLuz" ) { 	
 		
         precioTotal = cantLamp * precio
         
-        descuento = precioTotal - precioTotal * 0.40 + "$"
+        descuento = precioTotal - precioTotal * 0.40
       
-       document.getElementById("txtIdprecioDescuento").value = descuento;
+        mensaje = descuento + "$"
+       
+       document.getElementById("txtIdprecioDescuento").value = mensaje;
 
 	}else if (cantLamp == 5) { 	
 		
         precioTotal = cantLamp * precio
         
-        descuento = precioTotal - precioTotal * 0.30 + "$"
+        descuento = precioTotal - precioTotal * 0.30
        
-       document.getElementById("txtIdprecioDescuento").value = descuento;
+        mensaje = descuento + "$"
+       
+       document.getElementById("txtIdprecioDescuento").value = mensaje;
 
 	}else if (cantLamp == 4 && (marcaLamp == "ArgentinaLuz" || marcaLamp == "FelipeLamparas")) { 	
 		
         precioTotal = cantLamp * precio
         
-        descuento = precioTotal - precioTotal * 0.25 + "$"
+        descuento = precioTotal - precioTotal * 0.25
 
-      document.getElementById("txtIdprecioDescuento").value = descuento;
+        mensaje = descuento + "$"
+       
+      document.getElementById("txtIdprecioDescuento").value = mensaje;
 
 	}else if (cantLamp == 4) { 	
 		
         precioTotal = cantLamp * precio
 
-        descuento = precioTotal -  precioTotal * 0.20 + "$"
+        descuento = precioTotal -  precioTotal * 0.20
 
-       document.getElementById("txtIdprecioDescuento").value = descuento;
+        mensaje = descuento + "$"
+       
+       document.getElementById("txtIdprecioDescuento").value = mensaje;
 
 	}else if (cantLamp == 3 && marcaLamp == "ArgentinaLuz") { 	
 			
         precioTotal = cantLamp * precio
 
-        descuento = precioTotal -  precioTotal * 0.15 + "$"
+        descuento = precioTotal -  precioTotal * 0.15
 
-       document.getElementById("txtIdprecioDescuento").value = descuento;
-        ;
+        mensaje = descuento + "$"
+       
+       document.getElementById("txtIdprecioDescuento").value = mensaje;
+        
 	}else if (cantLamp == 3 && marcaLamp == "FelipeLamparas") {
 	
         precioTotal = cantLamp * precio
 
-        descuento = precioTotal -  precioTotal * 0.10 + "$"
+        descuento = precioTotal -  precioTotal * 0.10
 
-       document.getElementById("txtIdprecioDescuento").value = descuento;
-        ;
+        mensaje = descuento + "$"
+       
+       document.getElementById("txtIdprecioDescuento").value = mensaje;
+        
     }else if(cantLamp == 3){
         	
         precioTotal = cantLamp * precio
 
-        descuento = precioTotal - (precioTotal * 0.05) + "$"
+        descuento = precioTotal - (precioTotal * 0.05)
 
-       document.getElementById("txtIdprecioDescuento").value = descuento;
-        ;
+        mensaje = descuento + "$"
+       
+       document.getElementById("txtIdprecioDescuento").value = mensaje;
+        
     }else{
 		alert("No tiene descuentos disponibles")
 	}
@@ -108,4 +118,4 @@ function CalcularPrecio ()
 /*if(descuento >= 120){
     impuesto = descuento * 0.1
     descuento = impuesto + descuento
-    alert(impuesto)*/
+    alert("Se le agrego un IIBB de" + impuesto + "$")*/
