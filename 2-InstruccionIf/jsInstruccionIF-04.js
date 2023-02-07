@@ -1,7 +1,7 @@
 /// Franco Ferrari Ejercicio if 4
 function mostrar()
 {
-	let edad = document.getElementById("txtIdEdad").value;
+	let edad = parseInt(document.getElementById("txtIdEdad").value);
 	
 	
 if(edad > -1){

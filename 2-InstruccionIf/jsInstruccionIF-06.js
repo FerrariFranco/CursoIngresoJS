@@ -2,7 +2,7 @@
 function mostrar()
 
 {
-	let edad = document.getElementById("txtIdEdad").value;
+	let edad = parseInt(document.getElementById("txtIdEdad").value);
 if(edad > -1){
 	if (edad > 17){
 		alert("Es un adulto");

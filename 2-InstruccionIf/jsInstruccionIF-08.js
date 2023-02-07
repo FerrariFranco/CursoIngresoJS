@@ -3,7 +3,7 @@ function mostrar()
 {
 
 if(edad > -1){
-	let edad = document.getElementById("txtIdEdad").value;
+	let edad = parseInt(document.getElementById("txtIdEdad").value);
 	let estadoCivil = document.getElementById("estadoCivil").value;
 
 	if (edad > 17 && estadoCivil == "Soltero"){
