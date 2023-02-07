@@ -10,5 +10,102 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+ 	let cantLamp
+    let marcaLamp
+    let descuento
+    let precio
+    let precioTotal
+    let impuesto
+
+    
+    cantLamp =document.getElementById("txtIdCantidad").value
+    
+    marcaLamp = document.getElementById("Marca").value
+
+    precio = 35
+    
+
+    
+
+    
+
+
+
+
+    if (cantLamp >= 6){
+      
+        precioTotal = cantLamp * precio
+        
+        descuento = precioTotal - precioTotal * 0.50 + "$"
+       
+       document.getElementById("txtIdprecioDescuento").value = descuento
+       
+    } else if (cantLamp == 5 && marcaLamp == "ArgentinaLuz" ) { 	
+		
+        precioTotal = cantLamp * precio
+        
+        descuento = precioTotal - precioTotal * 0.40 + "$"
+      
+       document.getElementById("txtIdprecioDescuento").value = descuento;
+
+	}else if (cantLamp == 5) { 	
+		
+        precioTotal = cantLamp * precio
+        
+        descuento = precioTotal - precioTotal * 0.30 + "$"
+       
+       document.getElementById("txtIdprecioDescuento").value = descuento;
+
+	}else if (cantLamp == 4 && (marcaLamp == "ArgentinaLuz" || marcaLamp == "FelipeLamparas")) { 	
+		
+        precioTotal = cantLamp * precio
+        
+        descuento = precioTotal - precioTotal * 0.25 + "$"
+
+      document.getElementById("txtIdprecioDescuento").value = descuento;
+
+	}else if (cantLamp == 4) { 	
+		
+        precioTotal = cantLamp * precio
+
+        descuento = precioTotal -  precioTotal * 0.20 + "$"
+
+       document.getElementById("txtIdprecioDescuento").value = descuento;
+
+	}else if (cantLamp == 3 && marcaLamp == "ArgentinaLuz") { 	
+			
+        precioTotal = cantLamp * precio
+
+        descuento = precioTotal -  precioTotal * 0.15 + "$"
+
+       document.getElementById("txtIdprecioDescuento").value = descuento;
+        ;
+	}else if (cantLamp == 3 && marcaLamp == "FelipeLamparas") {
+	
+        precioTotal = cantLamp * precio
+
+        descuento = precioTotal -  precioTotal * 0.10 + "$"
+
+       document.getElementById("txtIdprecioDescuento").value = descuento;
+        ;
+    }else if(cantLamp == 3){
+        	
+        precioTotal = cantLamp * precio
+
+        descuento = precioTotal - (precioTotal * 0.05) + "$"
+
+       document.getElementById("txtIdprecioDescuento").value = descuento;
+        ;
+    }else{
+		alert("No tiene descuentos disponibles")
+	}
 }
+
+
+
+
+
+/*if(descuento >= 120){
+    impuesto = descuento * 0.1
+    descuento = impuesto + descuento
+    alert(impuesto)*/
