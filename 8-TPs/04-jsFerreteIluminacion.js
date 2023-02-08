@@ -17,6 +17,7 @@ function CalcularPrecio ()
     let precioTotal
     let impuesto
     let mensaje
+    let mensajeImpuesto
 
     
     cantLamp =document.getElementById("txtIdCantidad").value
@@ -31,8 +32,6 @@ function CalcularPrecio ()
         precioTotal = cantLamp * precio
         
         descuento = precioTotal - precioTotal * 0.50
-
-        mensaje = descuento + "$"
        
        
        
@@ -41,8 +40,7 @@ function CalcularPrecio ()
         precioTotal = cantLamp * precio
         
         descuento = precioTotal - precioTotal * 0.40
-      
-        mensaje = descuento + "$"
+
        
        ;
 
@@ -51,8 +49,7 @@ function CalcularPrecio ()
         precioTotal = cantLamp * precio
         
         descuento = precioTotal - precioTotal * 0.30
-       
-        mensaje = descuento + "$"
+
        
        ;
 
@@ -61,8 +58,6 @@ function CalcularPrecio ()
         precioTotal = cantLamp * precio
         
         descuento = precioTotal - precioTotal * 0.25
-
-        mensaje = descuento + "$"
        
       ;
 
@@ -71,8 +66,6 @@ function CalcularPrecio ()
         precioTotal = cantLamp * precio
 
         descuento = precioTotal -  precioTotal * 0.20
-
-        mensaje = descuento + "$"
        
        ;
 
@@ -81,8 +74,6 @@ function CalcularPrecio ()
         precioTotal = cantLamp * precio
 
         descuento = precioTotal -  precioTotal * 0.15
-
-        mensaje = descuento + "$"
        
        ;
         
@@ -91,8 +82,6 @@ function CalcularPrecio ()
         precioTotal = cantLamp * precio
 
         descuento = precioTotal -  precioTotal * 0.10
-
-        mensaje = descuento + "$"
        
        ;
         
@@ -101,8 +90,6 @@ function CalcularPrecio ()
         precioTotal = cantLamp * precio
 
         descuento = precioTotal - (precioTotal * 0.05)
-
-        mensaje = descuento + "$"
        
        ;
         
@@ -112,14 +99,25 @@ function CalcularPrecio ()
         }
 
  if(descuento >= 120){
+
         impuesto = descuento * 0.1
+
         descuento = impuesto + descuento
+
         mensaje = descuento + "$"
-        alert("Se le agrego un IIBB de " + impuesto + "$");
+
+        mensajeImpuesto = "Se le agrego un IIBB de " + impuesto + "$"
+      
+        alert(mensajeImpuesto);
+      
         document.getElementById("txtIdprecioDescuento").value = mensaje;
-        } else{
-                mensaje = descuento + "$"
-                document.getElementById("txtIdprecioDescuento").value = mensaje;
+      
+
+} else{
+             
+        mensaje = descuento + "$"
+             
+        document.getElementById("txtIdprecioDescuento").value = mensaje;
         
         }
         
