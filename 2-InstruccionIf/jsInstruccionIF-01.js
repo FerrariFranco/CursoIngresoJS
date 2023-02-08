@@ -24,7 +24,7 @@ function mostrar()
 
 //  if(tiempoHoras > 0 || distanciaRecorrida > 0 ){
 //  if(kmXHora <= 60){
-//   mensaje ="Demasiado lento"
+//   mensaje ="Muy lento"
 //  }else if(kmXHora <= 80){
 //  mensaje ="Lento"
 //  }else if(kmXHora <= 100){
