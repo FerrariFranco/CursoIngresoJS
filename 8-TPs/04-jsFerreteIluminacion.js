@@ -17,8 +17,9 @@ function CalcularPrecio() {
   let impuesto;
   let mensaje;
   let mensajeImpuesto;
+  let valorDesc;
 
-  cantLamp = document.getElementById("txtIdCantidad").value;
+  cantLamp = parseInt(document.getElementById("txtIdCantidad").value);
 
   marcaLamp = document.getElementById("Marca").value;
 
@@ -26,43 +27,194 @@ function CalcularPrecio() {
 
   precioTotal = cantLamp * precio;
 
-  if (cantLamp >= 6) {
-    descuento = precioTotal - precioTotal * 0.5;
-  } else if (cantLamp == 5 && marcaLamp == "ArgentinaLuz") {
-    descuento = precioTotal - precioTotal * 0.4;
-  } else if (cantLamp == 5) {
-    descuento = precioTotal - precioTotal * 0.3;
-  } else if (
-    cantLamp == 4 &&
-    (marcaLamp == "ArgentinaLuz" || marcaLamp == "FelipeLamparas")
-  ) {
-    descuento = precioTotal - precioTotal * 0.25;
-  } else if (cantLamp == 4) {
-    descuento = precioTotal - precioTotal * 0.2;
-  } else if (cantLamp == 3 && marcaLamp == "ArgentinaLuz") {
-    descuento = precioTotal - precioTotal * 0.15;
-  } else if (cantLamp == 3 && marcaLamp == "FelipeLamparas") {
-    descuento = precioTotal - precioTotal * 0.1;
-  } else if (cantLamp == 3) {
-    descuento = precioTotal - precioTotal * 0.05;
+
+  /* if (cantLamp >= 0) {
+    if (cantLamp >= 6) {
+      valorDesc = 50;
+    } else if (cantLamp == 5) {
+      if (marcaLamp == "ArgentinaLuz") {
+        valorDesc = 40;
+      } else {
+        valorDesc = 30;
+      }
+    } 
+ 
+ 
+    else if (cantLamp == 4) {
+      if (marcaLamp == "ArgentinaLuz" || marcaLamp == "FelipeLamparas") {
+        valorDesc = 25;
+      } else {
+        valorDesc = 20;
+      }
+    }
+ 
+ 
+    else if (cantLamp == 3) {
+      if (marcaLamp == "ArgentinaLuz") {
+        valorDesc = 15;
+      } else if (marcaLamp == "FelipeLamparas") {
+        valorDesc = 10;
+      } else {
+        valorDesc = 5;
+      }
+    } 
+ 
+    else {
+      valorDesc = 0;
+    } 
+ 
+    if (cantLamp >= 0) {
+      if (cantLamp >= 6) {
+        valorDesc = 50;
+      } else if (cantLamp == 5) {
+        switch (marcaLamp) {
+          case "ArgentinaLuz":
+            valorDesc = 40;
+            break;
+          default:
+            valorDesc = 30;
+        }
+ 
+ 
+      } else if (cantLamp == 4) {
+        switch (marcaLamp) {
+          case "ArgentinaLuz":
+          case "FelipeLamparas":
+            valorDesc = 25;
+            break;
+          default:
+            valorDesc = 20;
+        }
+ 
+      } else if (cantLamp == 3) {
+        switch (marcaLamp) {
+          case "ArgentinaLuz":
+            valorDesc = 15;
+            break;
+ 
+          case "FelipeLamparas":
+            valorDesc = 10;
+            break;
+ 
+          default:
+            valorDesc = 5;
+        }
+      } else {
+        valorDesc = 0;
+      }
+ 
+ 
+    if (cantLamp > 0) {
+      switch (cantLamp) {
+        case 5:
+          if (marcaLamp == "ArgentinaLuz") { valorDesc = 40 }
+          else { valorDesc = 30 }
+          break;
+ 
+        case 4:
+          if (marcaLamp == "ArgentinaLuz" || marcaLamp == "FelipeLamparas") { valorDesc = 25 }
+          else { valorDesc = 20 }
+          break;
+ 
+        case 3:
+          if (marcaLamp == "ArgentinaLuz") { valorDesc = 15 }
+          else if (marcaLamp == "FelipeLamparas") { valorDesc = 10 }
+          else { valorDesc = 5 }
+          break;
+ 
+        case 2:
+          valorDesc = 0
+          break;
+ 
+        case 1:
+          valorDesc = 0
+          break;
+ 
+        default:
+          valorDesc = 50
+          break;
+ 
+      } */
+
+
+  if (cantLamp >= 0) {
+    switch (cantLamp) {
+      case 5:
+        switch (marcaLamp) {
+          case "ArgentinaLuz":
+            valorDesc = 40;
+            break;
+          default:
+            valorDesc = 30;
+        }
+        break;
+
+      case 4:
+        switch (marcaLamp) {
+          case "ArgentinaLuz":
+          case "FelipeLamparas":
+            valorDesc = 25;
+            break;
+          default:
+            valorDesc = 20;
+        }
+        break;
+
+      case 3:
+        switch (marcaLamp) {
+          case "ArgentinaLuz":
+            valorDesc = 15;
+            break;
+          case "FelipeLamparas":
+            valorDesc = 10;
+            break;
+          default:
+            valorDesc = 5;
+        }
+        break;
+
+      case 2:
+        valorDesc = 0
+        break;
+
+      case 1:
+        valorDesc = 0
+        break;
+
+      default:
+        valorDesc = 50
+        break;
+
+    }
+
+
+
+
+    descuento = precioTotal - precioTotal * (valorDesc / 100);
+
+
+
+
+    if (descuento >= 120) {
+      impuesto = descuento * 0.1;
+
+      descuento = impuesto + descuento;
+
+      mensaje = descuento + "$";
+
+      mensajeImpuesto = "Se le agrego un IIBB de " + impuesto + "$";
+
+      alert(mensajeImpuesto);
+
+      document.getElementById("txtIdprecioDescuento").value = mensaje;
+    } else {
+      mensaje = descuento + "$";
+
+      document.getElementById("txtIdprecioDescuento").value = mensaje;
+    }
+
   } else {
-    alert("No tiene descuentos disponibles");
-  }
-
-  if (descuento >= 120) {
-    impuesto = descuento * 0.1;
-
-    descuento = impuesto + descuento;
-
-    mensaje = descuento + "$";
-
-    mensajeImpuesto = "Se le agrego un IIBB de " + impuesto + "$";
-
-    alert(mensajeImpuesto);
-
-    document.getElementById("txtIdprecioDescuento").value = mensaje;
-  } else {
-    mensaje = descuento + "$";
+    mensaje = "No valido";
 
     document.getElementById("txtIdprecioDescuento").value = mensaje;
   }
