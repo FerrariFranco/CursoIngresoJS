@@ -28,7 +28,7 @@ function CalcularPrecio() {
   precioTotal = cantLamp * precio;
 
 
-  /* 
+   
   
   // TODO IF
   if (cantLamp >= 0) {
@@ -71,7 +71,7 @@ function CalcularPrecio() {
 
 
     // IF EN CANTIDAD DE LAMPARA, SWITCH EN MARCAS
-    if (cantLamp >= 0) {
+   /* if (cantLamp >= 0) {
       if (cantLamp >= 6) {
         valorDesc = 50;
       } else if (cantLamp == 5) {
@@ -145,7 +145,7 @@ function CalcularPrecio() {
           valorDesc = 50
           break;
  
-      } */
+      } 
 
 
 
@@ -198,7 +198,7 @@ function CalcularPrecio() {
         valorDesc = 50
         break;
 
-    }
+    }/*
 
 
 
