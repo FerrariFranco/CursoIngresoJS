@@ -9,6 +9,6 @@ function mostrar()
 
     while(n >= 1){
         alert(n);
-        n--;}
+        n =- 1;}
 
 }//FIN DE LA FUNCIÓN
