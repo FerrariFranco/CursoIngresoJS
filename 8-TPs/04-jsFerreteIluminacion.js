@@ -198,7 +198,7 @@ function CalcularPrecio() {
         valorDesc = 50
         break;
 
-    }/*
+    }*/
 
 
 
