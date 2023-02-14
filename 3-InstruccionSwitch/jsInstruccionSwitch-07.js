@@ -1,7 +1,8 @@
 function mostrar()
 {
-	var destinoIngresado = document.getElementById("txtIdDestino").value;
-	
+	let destinoIngresado = document.getElementById("txtIdDestino").value;
+	let mensaje;
+
 	switch(destinoIngresado){	
 	
     case "Bariloche" :
