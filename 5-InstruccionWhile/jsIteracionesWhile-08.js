@@ -7,13 +7,31 @@ function mostrar()
 	var respuesta;
 	var sumaPositivos;
 	var multiplicacionNegativos;
+	let numero;
 	contador=0;
 	sumaPositivos=0;
 	multiplicacionNegativos=1;
 	respuesta='si';
 
+	while(respuesta == "si" || respuesta == "SI" || respuesta == "Si" ||respuesta == "sI"){
+	numero = parseInt(prompt("Ingrese numero"))
+		if(numero < 0){       
+			    
+		
+			multiplicacionNegativos = multiplicacionNegativos * numero;
+		
+			
+		}
+		else
+		{	
+			sumaPositivos = sumaPositivos + numero;	
+		}
 
-	txtIdSuma.value=sumaPositivos;
-	txtIdProducto.value=multiplicacionNegativos;
+		respuesta = prompt("Desea continuar? (coloque Si)");
+	}
+
+
+    document.getElementById("txtIdSuma").value = sumaPositivos;
+	document.getElementById("txtIdProducto").value = multiplicacionNegativos;
 
 }//FIN DE LA FUNCIÓN
