@@ -29,18 +29,18 @@ function mostrar() {
 
 		if (numeroIngresado > 0) {
 			sumaPositivos += numeroIngresado;
-			cantidadPositivos++;
+			cantidadPositivos = cantidadPositivos + 1;
 		}
 		else if (numeroIngresado < 0) {
 			sumaNegativos += numeroIngresado;
-			cantidadNegativos++;
+			cantidadNegativos = cantidadNegativos + 1;
 		}
 		else {
-			cantidadCeros++;
+			cantidadCeros = cantidadCeros + 1;
 		}
 
 		if (numeroIngresado % 2 == 0) {
-			cantidadPares++;
+			cantidadPares = cantidadPares + 1;
 		}
 
 		respuesta = prompt("¿Desea continuar ingresando números? (coloque si)");
