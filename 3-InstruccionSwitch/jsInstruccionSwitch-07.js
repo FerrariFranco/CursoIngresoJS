@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 function mostrar() {
   let destinoIngresado = document.getElementById("txtIdDestino").value;
   let mensaje;

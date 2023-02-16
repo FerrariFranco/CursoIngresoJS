@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 function mostrar() {
   //tomo el mes
   let mesDelAño = document.getElementById("txtIdMes").value;

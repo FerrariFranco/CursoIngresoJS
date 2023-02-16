@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 function mostrar() {
   //tomo la hora
   let hora = document.getElementById("txtIdHora").value;
