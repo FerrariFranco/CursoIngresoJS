@@ -1,23 +1,22 @@
-function mostrar()
-{
-	var destinoIngresado = document.getElementById("txtIdDestino").value;
-	
-	switch(destinoIngresado){	
-	
-    case "Bariloche" :
-	case "Ushuaia" :
-		alert("Sur");
-	break;
+function mostrar() {
+  let destinoIngresado = document.getElementById("txtIdDestino").value;
+  let mensaje;
+  switch (destinoIngresado) {
+    case "Bariloche":
+    case "Ushuaia":
+      mensaje = "Sur";
+      break;
 
-	case "Cataratas" :
-		alert("Norte");
-	break;
-	case "Mar del plata" :
-		alert("Este");
-	break;
-	
-	default :
-	alert("Seleccione un destino valido");
-	break;}
+    case "Cataratas":
+      mensaje = "Norte";
+      break;
+    case "Mar del plata":
+      mensaje = "Este";
+      break;
 
-}//FIN DE LA FUNCIÓN
+    default:
+      mensaje = "Seleccione un destino valido";
+      break;
+  }
+  alert(mensaje);
+} //FIN DE LA FUNCIÓN
