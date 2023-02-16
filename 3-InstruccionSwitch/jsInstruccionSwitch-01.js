@@ -2,7 +2,11 @@ function mostrar()
 {
 	//tomo el mes
 	let mesDelAño = document.getElementById("txtIdMes").value;
+<<<<<<< HEAD
 	let mensaje
+=======
+	let mensaje;
+>>>>>>> eb322009928c8a6f4ba710088c6daab11e16494b
 
     switch(mesDelAño){
 		case "Enero" :
