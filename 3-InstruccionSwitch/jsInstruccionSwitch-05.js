@@ -3,13 +3,6 @@ function mostrar() {
   //tomo la hora
   let hora = document.getElementById("txtIdHora").value;
   let mensaje;
-=======
-function mostrar()
-{
-	//tomo la hora
-	let hora = document.getElementById("txtIdHora").value
-	let mensaje;
->>>>>>> eb322009928c8a6f4ba710088c6daab11e16494b
 
   switch (hora) {
     case "7":
