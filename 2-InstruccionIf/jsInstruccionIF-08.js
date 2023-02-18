@@ -1,17 +1,19 @@
 /// Franco Ferrari Ejercicio if 8
-function mostrar()
-{
+function mostrar() {
 
 
 	let edad = parseInt(document.getElementById("txtIdEdad").value);
 	let estadoCivil = document.getElementById("estadoCivil").value;
-if(edad > -1){
-	if (edad > 17 && estadoCivil == "Soltero"){
-		alert("Es soltero y no es menor");
+	let mensaje;
+
+	if (edad > -1) {
+		if (edad > 17 && estadoCivil == "Soltero") {
+			mensaje = "Es soltero y no es menor";
+		}
+		else {
+			console.log("")
+		}
 	}
-	else{
-		console.log("")
-	}
-}
-else(alert("No es una edad valida"))
+	else { mensaje = "No es una edad valida" }
+	alert(mensaje);
 }

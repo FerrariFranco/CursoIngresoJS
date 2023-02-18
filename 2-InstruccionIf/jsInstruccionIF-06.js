@@ -1,16 +1,18 @@
 /// Franco Ferrari Ejercicio if 6
-function mostrar()
-
-{
+function mostrar() {
 	let edad = parseInt(document.getElementById("txtIdEdad").value);
-if(edad > -1){
-	if (edad > 17){
-		alert("Es un adulto");
-	} else if (edad >= 13 && edad <=17) { 	
-		alert("Es adolecente");
-	} else{
-		alert("Es un niño")
+	let mensaje;
+
+	if (edad > -1) {
+		if (edad > 17) {
+			mensaje = "Es un adulto";
+		} else if (edad >= 13 && edad <= 17) {
+			mensaje = "Es adolecente";
+		} else {
+			mensaje = "Es un niño"
+		}
 	}
-}
-else(alert("No es una edad valida"))
+	else { mensaje = "No es una edad valida" }
+	alert(mensaje);
+
 }
