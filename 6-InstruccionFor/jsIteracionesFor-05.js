@@ -39,7 +39,7 @@ function mostrar() {
 
 		}
 		sexoIngresado = prompt("Ingrese sexo (b, m, f)");
-		while (sexoIngresado != "M" && sexoIngresado != "F" && sexoIngresado != "f" && sexoIngresado != "m") {
+		while (sexoIngresado != "M" && sexoIngresado != "F" && sexoIngresado != "f" && sexoIngresado != "m" && sexoIngresado != "b" && sexoIngresado != "B") {
 			sexoIngresado = prompt("Ingrese sexo valido (b, m, f)");
 
 		}
@@ -48,6 +48,9 @@ function mostrar() {
 		}
 		if (sexoIngresado == "f" || sexoIngresado == "F") {
 			sexoIngresado = "Femenino";
+		}
+		if (sexoIngresado == "b" || sexoIngresado == "B") {
+			sexoIngresado = "No binario";
 		}
 
 		if (banderaMasBaja == true) {
@@ -67,7 +70,7 @@ function mostrar() {
 		}
 
 
-		if ((sexoIngresado == "Masculino") && notaIngresada > 6) {
+		if ((sexoIngresado == "Masculino") && notaIngresada >= 6) {
 			excelentes = excelentes + 1
 			mensajeDos = ", y los alumnos masculinos que sacaron mas de 6 han sido en total " + excelentes;
 		}
