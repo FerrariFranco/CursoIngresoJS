@@ -1,17 +1,25 @@
 function mostrar() {
+
+
 	let numeroIngresado;
+	let esPrimo;
 
-	numeroIngresado = parseInt(prompt("Que numero queres verificar si es primo?"));
-
-	if (numeroIngresado < 2) {
-		console.log(numeroIngresado + " no es primo.");
-		return;
+	esPrimo = true;
+	numeroIngresado = parseInt(prompt("Ingrese un número: "));
+	while (isNaN(numeroIngresado)) {
+		numeroIngresado = parseInt(prompt("ERROR : ingresa un numero"));
 	}
 	for (let i = 2; i <= numeroIngresado / 2; i++) {
 		if (numeroIngresado % i === 0) {
-			console.log(numeroIngresado + " no es primo.");
+			esPrimo = false;
+			break;
 		}
 	}
-	alert(numeroIngresado + " es primo.");
+
+	if (esPrimo == true) {
+		console.log("es primo");
+	} else {
+		console.log("no es primo");
+	}
 
 }//FIN DE LA FUNCIÓN
