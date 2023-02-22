@@ -61,9 +61,7 @@ function mostrar() {
       acumCemen = acumCemen + cantidad;
     }
 
-
     precioTotal = cantidad * precio + (precioTotal);
-
 
     if (bandera == true) {
       masCaro = precio;
@@ -93,14 +91,18 @@ function mostrar() {
   }
 
 
-  if (acumCal > acumCemen) {
+  if (acumCal > acumArena && acumCal > acumCemen) {
     mensajeMasbolsas = "El producto con mas bolsas compradas fue Cal y compro: " + acumCal + " bolsas";
   }
-  else if (acumCemen > acumArena) {
+  else if (acumArena > acumCal && acumArena > acumCemen) {
+    mensajeMasbolsas = "El producto con mas bolsas compradas fue Arena y compro: " + acumArena + " bolsas";
+  }
+  else if (acumCemen > acumCal && acumCemen > acumArena) {
     mensajeMasbolsas = "El producto con mas bolsas compradas fue Cemento y compro: " + acumCemen + " bolsas";
   }
   else {
-    mensajeMasbolsas = "El producto con mas bolsas compradas fue Arena y compro: " + acumArena + " bolsas";
+    mensajeMasbolsas = "Ha ingresado cantidad de bolsas iguales en 2 o mas  tipos productos!"
+
   }
 
   alert("El total en bruto a pagar es de: " + precioTotal + "$, y " + precioDesc);

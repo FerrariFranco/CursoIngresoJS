@@ -21,6 +21,8 @@ function mostrar() {
 	let mensajeMasUnidades;
 
 
+
+
 	for (i = 0; i < 5; i++) {
 		producto = prompt("Que desea comprar?");
 		while (producto != "Jabon" && producto != "jabon" && producto != "Alcohol" && producto != "alcohol" && producto != "Barbijo" && producto != "barbijo") {
@@ -81,19 +83,24 @@ function mostrar() {
 		}
 
 	}
-	if (acumAlc > acumJab) {
+	if (acumAlc > acumBar && acumAlc > acumJab) {
 		promedioMasUnidades = acumAlc / contAlc;
 		mensajeMasUnidades = "El producto con mas unidades compradas fue Alcohol y compró un promedio de " + promedioMasUnidades + " unidades";
 	}
-
-	else if (acumJab > acumBar) {
+	else if (acumBar > acumAlc && acumBar > acumJab) {
+		promedioMasUnidades = acumBar / contBarbijo;
+		mensajeMasUnidades = "El producto con mas unidades compradas fue Barbijo y compró un promedio de " + promedioMasUnidades + " unidades";
+	}
+	else if (acumJab > acumAlc && acumJab > acumBar) {
 		promedioMasUnidades = acumJab / contJab;
 		mensajeMasUnidades = "El producto con mas unidades compradas fue Jabon y compró un promedio de " + promedioMasUnidades + " unidades";
 	}
 	else {
-		promedioMasUnidades = acumBar / contBarbijo;
-		mensajeMasUnidades = "El producto con mas unidades compradas fue Barbijo y compró un promedio de " + promedioMasUnidades + " unidades";
+		promedioMasUnidades = 0;
+		mensajeMasUnidades = "Ha ingresado cantidades iguales en 2 o mas productos!"
+
 	}
+
 
 	alert("El mas barato de los alcoholes costó: " + alcBarato + ", su fabricante fue: " + alcBaratoFab + ", y compro " + alcBaratoCant + " unidades!");
 	alert(mensajeMasUnidades);

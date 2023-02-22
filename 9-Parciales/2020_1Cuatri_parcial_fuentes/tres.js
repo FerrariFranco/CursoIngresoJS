@@ -4,7 +4,6 @@ function mostrar() {
 	let estadoCivilIngresado;
 	let temperatura;
 	let nacionalidad;
-	let contadorViejos = 0;
 	let respuesta = "si";
 	let bandera = true;
 	let hot;
@@ -13,6 +12,7 @@ function mostrar() {
 	let cantHombres = 0;
 	let acumSolteros = 0;
 	let contSolteros = 0;
+	let contadorViejos = 0;
 	let promedioSolteros;
 	let nombre;
 
@@ -44,8 +44,6 @@ function mostrar() {
 		while (nacionalidad != "A" && nacionalidad != "N" && nacionalidad != "E") {
 			nacionalidad = prompt("Ingrese su nacionalidad (A-si es argentino;       E-si es extranjero;       N-si es nacionalizado)");
 		}
-
-
 
 		if (sexoIngresado == "F") {
 			sexoIngresado = "Femenino";
@@ -121,7 +119,6 @@ function mostrar() {
 	if (isNaN(promedioSolteros)) {
 		promedioSolteros = 0;
 	}
-
 
 	alert("El nombre de la persona con mas temperatura es: " + nombreHot + "y tuvo una temperatura de: " + hot + "°C");
 	alert("La cantidad de viudos/as que son mayores de edad es: " + contMayores + ". La cantidad de hombres viudos o solteros es de: " + cantHombres + ". Y la cantidad de personas mayores con mas de 38°C de temperatura corporal es de: " + contadorViejos);
