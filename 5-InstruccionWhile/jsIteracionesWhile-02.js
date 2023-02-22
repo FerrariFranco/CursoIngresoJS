@@ -2,35 +2,44 @@
 al presionar el botón mostrar 10 repeticiones 
 con números DESCENDENTES, desde el 10 al 1.*/
 function mostrar() {
-    // let n
+    /*let i
+i = 10
+while(i > 0){
+  console.log(i);
+  i = i - 1;
+}
+*/
 
-    // n = 10
 
-    // while(n >= 1){
-    //     alert(n);
-    //     n =- 1;}
+
+    let i;
+    let acumulador;
+    let suma;
+    let promedio;
     let numeroIngresado;
-    let contador;
-    let contadorDeMayores;
 
-    contador = 0
+    i = 0;
+    acumulador = 0;
+    numeroIngresado = 0;
+    suma = 0
 
-    contadorDeMayores = 0;
-
-    while (contador < 5) {
-        numeroIngresado = prompt("ingresa un numero");
-        numeroIngresado = parseInt(numeroIngresado);
+    while (i < 5) {
+        i = i + 1;
+        numeroIngresado = parseInt(prompt("ingresa un numero"));
         while (isNaN(numeroIngresado)) {
-            numeroIngresado = prompt("error, ingresa un numero valido");
-            numeroIngresado = parseInt(numeroIngresado);
-        }
-        if (numeroIngresado > 9 && numeroIngresado < 21) {
-            contadorDeMayores = contadorDeMayores + 1;
+            numeroIngresado = parseInt(prompt("ERROR : ingresa un numero"));
         }
 
-        contador = contador + 1;
+        if (numeroIngresado > 9 && numeroIngresado < 21) {
+            acumulador = acumulador + 1;
+            suma = suma + numeroIngresado;
+        }
+
     }
 
-    alert("la cantidad de numeros que se encuentran entre 10 y 20 (incluidos) es de: " + contadorDeMayores);
+    promedio = suma / acumulador;
+
+    alert(acumulador);
+    alert(promedio);
 
 }//FIN DE LA FUNCIÓN
