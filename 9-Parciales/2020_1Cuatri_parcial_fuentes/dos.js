@@ -21,8 +21,6 @@ function mostrar() {
   let respuesta = "si";
 
 
-
-
   while (respuesta == "si" || respuesta == "SI" || respuesta == "Si" || respuesta == "sI") {
     producto = prompt("Que desea comprar?");
     while (producto != "cal" && producto != "Cal" && producto != "arena" && producto != "Arena" && producto != "Cemento" && producto != "cemento") {
@@ -64,7 +62,6 @@ function mostrar() {
     }
 
 
-
     precioTotal = cantidad * precio + (precioTotal);
 
 
@@ -96,18 +93,14 @@ function mostrar() {
   }
 
 
-  if (acumCal > acumArena && acumCal > acumCemen) {
+  if (acumCal > acumCemen) {
     mensajeMasbolsas = "El producto con mas bolsas compradas fue Cal y compro: " + acumCal + " bolsas";
   }
-  else if (acumArena > acumCal && acumArena > acumCemen) {
-    mensajeMasbolsas = "El producto con mas bolsas compradas fue Arena y compro: " + acumArena + " bolsas";
-  }
-  else if (acumCemen > acumCal && acumCemen > acumArena) {
+  else if (acumCemen > acumArena) {
     mensajeMasbolsas = "El producto con mas bolsas compradas fue Cemento y compro: " + acumCemen + " bolsas";
   }
   else {
-    mensajeMasbolsas = "Ha ingresado cantidad de bolsas iguales en 2 o mas  tipos productos!"
-
+    mensajeMasbolsas = "El producto con mas bolsas compradas fue Arena y compro: " + acumArena + " bolsas";
   }
 
   alert("El total en bruto a pagar es de: " + precioTotal + "$, y " + precioDesc);
