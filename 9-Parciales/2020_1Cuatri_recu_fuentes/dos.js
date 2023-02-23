@@ -14,10 +14,12 @@ function mostrar() {
   let precioTotal = 0;
   let descuento;
   let precioDesc;
-  let mensajeMasbolsas;
+  let promedioArena;
   let bandera = true;
   let masCaro;
   let tipoCaro;
+  let banderaDos = true;
+  let masBarato;
   let respuesta = "si";
 
 
@@ -51,28 +53,41 @@ function mostrar() {
 
     acumCantidad = acumCantidad + cantidad;
 
-    if (tipoProducto == "Cal") {
-      acumCal = acumCal + cantidad;
-    }
-    if (tipoProducto == "Arena") {
-      acumArena = acumArena + cantidad;
-    }
-    if (tipoProducto == "Cemento") {
-      acumCemen = acumCemen + cantidad;
+
+
+
+
+    switch (tipoProducto) {
+      case "Cal":
+        acumCal = acumCal + cantidad;
+        break;
+      case "Arena":
+        acumArena = acumArena + cantidad;
+        break;
+      case "Cemento":
+        acumCemen = acumCemen + cantidad;
+        break;
     }
 
     precioTotal = cantidad * precio + (precioTotal);
 
-    if (bandera == true) {
+    if (bandera == true && tipoProducto == "Cal") {
       masCaro = precio;
-      tipoCaro = tipoProducto;
       bandera = false;
     }
-    else if (masCaro < precio) {
+    else if (masCaro < precio && tipoProducto == "Cal") {
       masCaro = precio;
-      tipoCaro = tipoProducto;
     }
 
+    if (banderaDos == true && tipoProducto == "Cemento") {
+      masBarato = precio;
+
+      bandera = false;
+    }
+    else if (masBarato > precio && tipoProducto == "Cemento") {
+      masBarato = precio;
+
+    }
 
     respuesta = prompt("Desea continuar? (coloque Si)");
   }
@@ -90,22 +105,9 @@ function mostrar() {
     precioDesc = "No tiene descuento";
   }
 
-
-  if (acumCal > acumArena && acumCal > acumCemen) {
-    mensajeMasbolsas = "El producto con mas bolsas compradas fue Cal y compro: " + acumCal + " bolsas";
-  }
-  else if (acumArena > acumCal && acumArena > acumCemen) {
-    mensajeMasbolsas = "El producto con mas bolsas compradas fue Arena y compro: " + acumArena + " bolsas";
-  }
-  else if (acumCemen > acumCal && acumCemen > acumArena) {
-    mensajeMasbolsas = "El producto con mas bolsas compradas fue Cemento y compro: " + acumCemen + " bolsas";
-  }
-  else {
-    mensajeMasbolsas = "Ha ingresado cantidad de bolsas iguales en 2 o mas  tipos productos!"
-
-  }
+  promedioArena = acumArena / contArena;
 
   alert("El total en bruto a pagar es de: " + precioTotal + "$, y " + precioDesc);
-  alert(mensajeMasbolsas);
-  alert("Y el tipo de producto mas caro fue: " + tipoCaro + " y costo " + masCaro + "$ por bolsa");
+  alert("Se compraron " + acumArena + " bolsas de arena, y un promedio por compra de " + promedioArena);
+  alert("La bolsa de cal mas cara costo: $ " + masCaro + " y la bolsa de arena mas barata costo: $" + masBarato);
 }
