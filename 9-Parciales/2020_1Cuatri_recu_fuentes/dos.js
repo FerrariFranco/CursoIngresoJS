@@ -28,19 +28,23 @@ function mostrar() {
     while (producto != "cal" && producto != "Cal" && producto != "arena" && producto != "Arena" && producto != "Cemento" && producto != "cemento") {
       producto = prompt("Que producto comprar?");
     }
-    if (producto == "cal" || producto == "Cal") {
-      tipoProducto = "Cal";
-      contCal = contCal + 1;
+    switch (producto) {
+      case "cal":
+      case "Cal":
+        tipoProducto = "Cal";
+        contCal = contCal + 1;
+        break;
+      case "Arena":
+      case "arena":
+        tipoProducto = "Arena"
+        contArena = contArena + 1;
+        break;
+      case "Cemento":
+      case "cemento":
+        tipoProducto = "Cemento"
+        contCemen = contCemen + 1;
+        break;
     }
-    if (producto == "arena" || producto == "Arena") {
-      tipoProducto = "Arena"
-      contArena = contArena + 1;
-    }
-    if (producto == "Cemento" || producto == "cemento") {
-      tipoProducto = "Cemento"
-      contCemen = contCemen + 1;
-    }
-
     precio = parseInt(prompt("Ingrese precio."));
     while (isNaN(precio) || precio < 0) {
       precio = parseInt(prompt("Ingrese precio (mayor a 0)."));

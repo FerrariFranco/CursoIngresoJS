@@ -26,17 +26,22 @@ function mostrar() {
     while (producto != "cal" && producto != "Cal" && producto != "arena" && producto != "Arena" && producto != "Cemento" && producto != "cemento") {
       producto = prompt("Que producto comprar?");
     }
-    if (producto == "cal" || producto == "Cal") {
-      tipoProducto = "Cal";
-      contCal = contCal + 1;
-    }
-    if (producto == "arena" || producto == "Arena") {
-      tipoProducto = "Arena"
-      contArena = contArena + 1;
-    }
-    if (producto == "Cemento" || producto == "cemento") {
-      tipoProducto = "Cemento"
-      contCemen = contCemen + 1;
+    switch (producto) {
+      case "cal":
+      case "Cal":
+        tipoProducto = "Cal";
+        contCal = contCal + 1;
+        break;
+      case "Arena":
+      case "arena":
+        tipoProducto = "Arena"
+        contArena = contArena + 1;
+        break;
+      case "Cemento":
+      case "cemento":
+        tipoProducto = "Cemento"
+        contCemen = contCemen + 1;
+        break;
     }
 
     precio = parseInt(prompt("Ingrese precio."));
@@ -51,15 +56,18 @@ function mostrar() {
 
     acumCantidad = acumCantidad + cantidad;
 
-    if (tipoProducto == "Cal") {
-      acumCal = acumCal + cantidad;
+    switch (tipoProducto) {
+      case "Cal":
+        acumCal = acumCal + cantidad;
+        break;
+      case "Arena":
+        acumArena = acumArena + cantidad;
+        break;
+      case "Cemento":
+        acumCemen = acumCemen + cantidad;
+        break;
     }
-    if (tipoProducto == "Arena") {
-      acumArena = acumArena + cantidad;
-    }
-    if (tipoProducto == "Cemento") {
-      acumCemen = acumCemen + cantidad;
-    }
+
 
     precioTotal = cantidad * precio + (precioTotal);
 
