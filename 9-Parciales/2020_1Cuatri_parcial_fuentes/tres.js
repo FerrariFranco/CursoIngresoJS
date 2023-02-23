@@ -45,13 +45,17 @@ function mostrar() {
 			nacionalidad = prompt("Ingrese su nacionalidad (A-si es argentino;       E-si es extranjero;       N-si es nacionalizado)");
 		}
 
-		if (sexoIngresado == "F") {
-			sexoIngresado = "Femenino";
-		}
-		else {
-			sexoIngresado = "Masculino";
-		}
 
+
+		switch (sexoIngresado) {
+			case "F":
+			case "f":
+				sexoIngresado = "Femenino";
+				break;
+			default:
+				sexoIngresado = "Masculino";
+				break;
+		}
 
 		switch (estadoCivilIngresado) {
 			case "1":
