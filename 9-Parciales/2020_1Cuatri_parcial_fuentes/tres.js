@@ -36,7 +36,7 @@ function mostrar() {
 			estadoCivilIngresado = estadoCivilIngresado = prompt("Ingrese su estado civil, 1-para soltero;       2-para casado;       3-para divorciados;       4-para viudos");
 		}
 		temperatura = parseInt(prompt("Ingrese temperatura"));
-		while (isNaN(temperatura || temperatura < 10 || temperatura >= 50)) {
+		while (isNaN(temperatura || temperatura < 25 || temperatura >= 45)) {
 			temperatura = parseInt(prompt("Ingrese una temperatura valida"))
 		}
 
