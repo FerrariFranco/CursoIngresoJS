@@ -1,3 +1,14 @@
+// Bienvenidos.
+// En el ingreso a un viaje en avión nos solicitan nacionalidad, nacionalidad , edad, sexo("f" o "m") y
+// estado civil("soltero", "casado" o "viudo")y temperatura corporal.
+// a) la Nacionalidad de la persona con mas temperatura.
+// b) Cuantos mayores de edad( más de 17) estan solteros
+// c) La cantidad de Mujeres que hay solteras o viudas.
+// d) cuantas personas de la tercera edad( mas de 60 años) , tienen mas de 38 de temperatura
+// e) El promedio de edad entre las mujeres casadas.
+
+
+
 function mostrar() {
 	let edadIngresada;
 	let sexoIngresado;
@@ -9,7 +20,7 @@ function mostrar() {
 	let maxTemperatura;
 	let nacionalidadMaxTemperatura;
 	let contMayores = 0;
-	let cantMujeres = 0;
+	let cantMujeresSolterasOViudas = 0;
 	let acumCasadas = 0;
 	let contCasadas = 0;
 	let contadorViejos = 0;
@@ -60,7 +71,7 @@ function mostrar() {
 		switch (estadoCivilIngresado) {
 			case "1":
 				if (sexoIngresado == "Femenino") {
-					cantMujeres = cantMujeres + 1;
+					cantMujeresSolterasOViudas = cantMujeresSolterasOViudas + 1;
 
 				}
 				if (edadIngresada > 17) {
@@ -78,9 +89,7 @@ function mostrar() {
 				break;
 			case "4":
 				if (sexoIngresado == "Femenino") {
-					cantMujeres = cantMujeres + 1;
-					acumCasadas = acumCasadas + edadIngresada;
-					contCasadas = contCasadas + 1;
+					cantMujeresSolterasOViudas = cantMujeresSolterasOViudas + 1;
 				}
 
 				break;
@@ -101,12 +110,12 @@ function mostrar() {
 
 		if (bandera == true) {
 			maxTemperatura = temperatura;
-			nacionalidadMaxTemperatura = nombre;
+			nacionalidadMaxTemperatura = nacionalidad;
 			bandera = false;
 		}
 		else if (maxTemperatura < temperatura) {
 			maxTemperatura = temperatura;
-			nacionalidadMaxTemperatura = nombre;
+			nacionalidadMaxTemperatura = nacionalidad;
 		}
 
 		if (edadIngresada >= 60 && temperatura > 38) {
@@ -116,14 +125,14 @@ function mostrar() {
 		respuesta = prompt("Desea continuar? (coloque Si)");
 	}
 
-	promedioCasadas = acumCasadas / contSolteros;
+	promedioCasadas = acumCasadas / contCasadas;
 
 	if (isNaN(promedioCasadas)) {
 		promedioCasadas = 0;
 	}
 
 	alert("La nacionalidad de la persona con mas temperatura es: " + nacionalidadMaxTemperatura + "y tuvo una temperatura de: " + maxTemperatura + "°C");
-	alert("La cantidad de viudos/as que son mayores de edad es: " + contMayores + ". La cantidad de mujeres viudos o Casadases de: " + cantMujeres + ". Y la cantidad de personas mayores con mas de 38°C de temperatura corporal es de: " + contadorViejos);
+	alert("La cantidad de viudos/as que son mayores de edad es: " + contMayores + ". La cantidad de mujeres viudos o Casadases de: " + cantMujeresSolterasOViudas + ". Y la cantidad de personas mayores con mas de 38°C de temperatura corporal es de: " + contadorViejos);
 	alert("El promedio de edad de mujeres casadas es de: " + promedioCasadas);
 
 }
