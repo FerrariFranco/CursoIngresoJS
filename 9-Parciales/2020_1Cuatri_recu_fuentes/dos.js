@@ -6,10 +6,10 @@ function mostrar() {
   let precio;
   let acumCal = 0;
   let acumArena = 0;
-  let acumCemen = 0;
+  let acumCemento = 0;
   let contCal = 0;
   let contArena = 0;
-  let contCemen = 0;
+  let contCemento = 0;
   let acumCantidad = 0;
   let precioTotal = 0;
   let descuento;
@@ -42,7 +42,7 @@ function mostrar() {
       case "Cemento":
       case "cemento":
         tipoProducto = "Cemento"
-        contCemen = contCemen + 1;
+        contCemento = contCemento + 1;
         break;
     }
     precio = parseInt(prompt("Ingrese precio."));
@@ -57,10 +57,6 @@ function mostrar() {
 
     acumCantidad = acumCantidad + cantidad;
 
-
-
-
-
     switch (tipoProducto) {
       case "Cal":
         acumCal = acumCal + cantidad;
@@ -69,7 +65,7 @@ function mostrar() {
         acumArena = acumArena + cantidad;
         break;
       case "Cemento":
-        acumCemen = acumCemen + cantidad;
+        acumCemento = acumCemento + cantidad;
         break;
     }
 
