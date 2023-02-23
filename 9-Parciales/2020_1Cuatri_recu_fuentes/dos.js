@@ -107,7 +107,7 @@ function mostrar() {
 
   promedioArena = acumArena / contArena;
 
-  alert("El total en bruto a pagar es de: " + precioTotal + "$, y " + precioDesc);
-  alert("Se compraron " + acumArena + " bolsas de arena, y un promedio por compra de " + promedioArena);
-  alert("La bolsa de cal mas cara costo: $ " + masCaro + " y la bolsa de arena mas barata costo: $" + masBarato);
+  console.log("El total en bruto a pagar es de: " + precioTotal + "$, y " + precioDesc);
+  console.log("Se compraron " + acumArena + " bolsas de arena, y un promedio por compra de " + promedioArena);
+  console.log("La bolsa de cal mas cara costo: $ " + masCaro + " y la bolsa de arena mas barata costo: $" + masBarato);
 }
