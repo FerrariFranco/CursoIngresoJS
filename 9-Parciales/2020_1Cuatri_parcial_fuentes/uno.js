@@ -51,14 +51,16 @@ function mostrar() {
 			cantidad = parseInt(prompt("Ingrese Cantidad (entre 0 y 1000)."));
 		}
 
-		if (tipoProducto == "Jabon") {
-			acumJab = acumJab + cantidad;
-		}
-		if (tipoProducto == "alcohol") {
-			acumAlc = acumAlc + cantidad;
-		}
-		if (tipoProducto == "Barbijo") {
-			acumBar = acumBar + cantidad;
+		switch (tipoProducto) {
+			case "Jabon":
+				acumJab = acumJab + cantidad;
+				break;
+			case "Alcohol":
+				acumAlc = acumAlc + cantidad;
+				break;
+			case "Barbijo":
+				acumBar = acumBar + cantidad;
+				break;
 		}
 
 		marca = prompt("Ingrese marca");
