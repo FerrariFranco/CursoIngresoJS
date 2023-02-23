@@ -6,8 +6,8 @@ function mostrar() {
 	let nacionalidad;
 	let respuesta = "si";
 	let bandera = true;
-	let hot;
-	let nombreHot;
+	let mayorTemperatura;
+	let nombreMayorTemperatura;
 	let contMayores = 0;
 	let cantHombres = 0;
 	let acumSolteros = 0;
@@ -18,25 +18,22 @@ function mostrar() {
 
 	while (respuesta == "si" || respuesta == "SI" || respuesta == "Si" || respuesta == "sI") {
 
-
-
 		nombre = prompt("Ingrese nombre");
 
 		edadIngresada = parseInt(prompt("Ingrese su edad:"));
-		while (isNaN(edadIngresada) || edadIngresada <= 0 || edadIngresada >= 130 || edadIngresada == undefined) {
+		while (isNaN(edadIngresada) || edadIngresada <= 0 || edadIngresada >= 130) {
 			edadIngresada = parseInt(prompt("Ingrese una edad valida."));
-
 		}
 		sexoIngresado = prompt("Ingrese su sexo (F; M)");
 		while (sexoIngresado != "M" && sexoIngresado != "F" && sexoIngresado != "m" && sexoIngresado != "f") {
 			sexoIngresado = prompt("Ingrese correctamente su sexo (F; M)");
 		}
-		estadoCivilIngresado = prompt("Ingrese su estado civil, 1-para soltero; 2-para casado; 3-para divorciados; 4-para viudos");
-		while (estadoCivilIngresado != "1" && estadoCivilIngresado != "2" && estadoCivilIngresado != "3" && estadoCivilIngresado != "4") {
-			estadoCivilIngresado = estadoCivilIngresado = prompt("Ingrese su estado civil, 1-para soltero;       2-para casado;       3-para divorciados;       4-para viudos");
+		estadoCivilIngresado = prompt("Ingrese su estado civil");
+		while (estadoCivilIngresado != "soltero" && estadoCivilIngresado != "viudo" && estadoCivilIngresado != "casado" && estadoCivilIngresado != "soltera" && estadoCivilIngresado != "viuda" && estadoCivilIngresado != "casada") {
+			estadoCivilIngresado = estadoCivilIngresado = prompt("Ingrese su estado civil, correctamente!);
 		}
 		temperatura = parseInt(prompt("Ingrese temperatura"));
-		while (isNaN(temperatura || temperatura < 25 || temperatura >= 45)) {
+		while (isNaN(temperatura || temperatura < 31 || temperatura >= 45)) {
 			temperatura = parseInt(prompt("Ingrese una temperatura valida"))
 		}
 
@@ -57,21 +54,6 @@ function mostrar() {
 				break;
 		}
 
-		switch (estadoCivilIngresado) {
-			case "1":
-				estadoCivilIngresado = "Soltero/a";
-				break;
-			case "2":
-				estadoCivilIngresado = "Casado/a";
-				break;
-			case "3":
-				estadoCivilIngresado = "Divorciado/a";
-				break;
-			case "4":
-				estadoCivilIngresado = "Viudo/a";
-				break;
-		}
-
 		switch (nacionalidad) {
 			case "A":
 				nacionalidad = "Argentino/a";
@@ -86,22 +68,22 @@ function mostrar() {
 
 
 		if (bandera == true) {
-			hot = temperatura;
-			nombreHot = nombre;
+			mayorTemperatura = temperatura;
+			nombreMayorTemperatura = nombre;
 			bandera = false;
 		}
-		else if (hot < temperatura) {
-			hot = temperatura;
-			nombreHot = nombre;
+		else if (mayorTemperatura < temperatura) {
+			mayorTemperatura = temperatura;
+			nombreMayorTemperatura = nombre;
 		}
 
 
-		if (edadIngresada > 17 && estadoCivilIngresado == "Viudo/a") {
+		if (edadIngresada > 17 && (estadoCivilIngresado == "viudo" || estadoCivilIngresado == "viuda")) {
 			contMayores = contMayores + 1;
 		}
 
 
-		if (sexoIngresado == "Masculino" && (estadoCivilIngresado == "Soltero/a" || estadoCivilIngresado == "Viudo/a")) {
+		if (sexoIngresado == "Masculino" && (estadoCivilIngresado == "soltero" || estadoCivilIngresado == "viudo")) {
 			cantHombres = cantHombres + 1;
 		}
 
@@ -111,7 +93,7 @@ function mostrar() {
 		}
 
 
-		if (sexoIngresado == "Masculino" && estadoCivilIngresado == "Soltero/a") {
+		if (sexoIngresado == "Masculino" && estadoCivilIngresado == "soltero") {
 			acumSolteros = acumSolteros + edadIngresada;
 			contSolteros = contSolteros + 1;
 		}
@@ -124,8 +106,8 @@ function mostrar() {
 		promedioSolteros = 0;
 	}
 
-	alert("El nombre de la persona con mas temperatura es: " + nombreHot + "y tuvo una temperatura de: " + hot + "°C");
-	alert("La cantidad de viudos/as que son mayores de edad es: " + contMayores + ". La cantidad de hombres viudos o solteros es de: " + cantHombres + ". Y la cantidad de personas mayores con mas de 38°C de temperatura corporal es de: " + contadorViejos);
-	alert("El promedio de edad de los hombres solteros es de: " + promedioSolteros);
+	console.log("El nombre de la persona con mas temperatura es: " + nombreMayorTemperatura + "y tuvo una temperatura de: " + mayorTemperatura + "°C");
+	console.log("La cantidad de viudos/as que son mayores de edad es: " + contMayores + ". La cantidad de hombres viudos o solteros es de: " + cantHombres + ". Y la cantidad de personas mayores con mas de 38°C de temperatura corporal es de: " + contadorViejos);
+	console.log("El promedio de edad de los hombres solteros es de: " + promedioSolteros);
 
 }
