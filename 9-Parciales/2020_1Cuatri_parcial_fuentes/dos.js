@@ -4,12 +4,15 @@ function mostrar() {
   let producto;
   let cantidad;
   let precio;
-  let acumCal = 0;
-  let acumArena = 0;
-  let acumCemen = 0;
+  let acumPrecioCal = 0;
+  let acumPrecioArena = 0;
+  let acumPrecioCemento = 0;
+  let acumCantidadCal = 0;
+  let acumCantidadArena = 0;
+  let acumCantidadCemento = 0;
   let contCal = 0;
   let contArena = 0;
-  let contCemen = 0;
+  let contCemento = 0;
   let acumCantidad = 0;
   let precioTotal = 0;
   let descuento;
@@ -40,7 +43,7 @@ function mostrar() {
       case "Cemento":
       case "cemento":
         tipoProducto = "Cemento"
-        contCemen = contCemen + 1;
+        contCemento = contCemento + 1;
         break;
     }
 
@@ -58,13 +61,13 @@ function mostrar() {
 
     switch (tipoProducto) {
       case "Cal":
-        acumCal = acumCal + cantidad;
+        acumCantidadCal = acumCantidadCal + cantidad;
         break;
       case "Arena":
-        acumArena = acumArena + cantidad;
+        acumCantidadArena = acumCantidadArena + cantidad;
         break;
       case "Cemento":
-        acumCemen = acumCemen + cantidad;
+        acumCantidadCemento = acumCantidadCemento + cantidad;
         break;
     }
 
@@ -99,14 +102,14 @@ function mostrar() {
   }
 
 
-  if (acumCal > acumArena && acumCal > acumCemen) {
-    mensajeMasbolsas = "El producto con mas bolsas compradas fue Cal y compro: " + acumCal + " bolsas";
+  if (acumCantidadCal > acumCantidadArena && acumCantidadCal > acumCantidadCemento) {
+    mensajeMasbolsas = "El producto con mas bolsas compradas fue Cal y compro: " + acumCantidadCal + " bolsas";
   }
-  else if (acumArena > acumCal && acumArena > acumCemen) {
-    mensajeMasbolsas = "El producto con mas bolsas compradas fue Arena y compro: " + acumArena + " bolsas";
+  else if (acumCantidadArena > acumCantidadCal && acumCantidadArena > acumCantidadCemento) {
+    mensajeMasbolsas = "El producto con mas bolsas compradas fue Arena y compro: " + acumCantidadArena + " bolsas";
   }
-  else if (acumCemen > acumCal && acumCemen > acumArena) {
-    mensajeMasbolsas = "El producto con mas bolsas compradas fue Cemento y compro: " + acumCemen + " bolsas";
+  else if (acumCantidadCemento > acumCantidadCal && acumCantidadCemento > acumCantidadArena) {
+    mensajeMasbolsas = "El producto con mas bolsas compradas fue Cemento y compro: " + acumCantidadCemento + " bolsas";
   }
   else {
     mensajeMasbolsas = "Ha ingresado cantidad de bolsas iguales en 2 o mas  tipos productos!"

@@ -4,20 +4,20 @@ function mostrar() {
   let producto;
   let cantidad;
   let precio;
-  let acumCal = 0;
-  let acumArena = 0;
-  let acumCemento = 0;
+  let acumPrecioArena = 0;
+  let acumCantidadCal = 0;
+  let acumCantidadArena = 0;
+  let acumCantidadCemento = 0;
   let contCal = 0;
   let contArena = 0;
   let contCemento = 0;
   let acumCantidad = 0;
   let precioTotal = 0;
   let descuento;
-  let precioDesc;
+  let precioDescuento;
   let promedioArena;
   let bandera = true;
   let masCaro;
-  let tipoCaro;
   let banderaDos = true;
   let masBarato;
   let respuesta = "si";
@@ -59,15 +59,17 @@ function mostrar() {
 
     switch (tipoProducto) {
       case "Cal":
-        acumCal = acumCal + cantidad;
+        acumCantidadCal = acumCantidadCal + cantidad;
         break;
       case "Arena":
-        acumArena = acumArena + cantidad;
+        acumCantidadArena = acumCantidadArena + cantidad;
+        acumPrecioArena = acumPrecioArena + (precio * cantidad);
         break;
       case "Cemento":
-        acumCemento = acumCemento + cantidad;
+        acumCantidadCemento = acumCantidadCemento + cantidad;
         break;
     }
+
 
     precioTotal = cantidad * precio + (precioTotal);
 
@@ -95,19 +97,19 @@ function mostrar() {
 
   if (acumCantidad >= 10) {
     descuento = 15;
-    precioDesc = precioTotal - precioTotal * (descuento / 100);
-    precioDesc = "El precio con descuento es: " + precioDesc + "$";
+    precioDescuento = precioTotal - precioTotal * (descuento / 100);
+    precioDescuento = "El precio con descuento es: " + precioDescuento + "$";
   } else if (acumCantidad >= 30) {
     descuento = 25;
-    precioDesc = precioTotal - precioTotal * (descuento / 100);
-    precioDesc = "El precio con descuento es: " + precioDesc + "$";
+    precioDescuento = precioTotal - precioTotal * (descuento / 100);
+    precioDescuento = "El precio con descuento (es: " + precioDescuento + "$";
   } else {
-    precioDesc = "No tiene descuento";
+    precioDescuento = "No tiene descuento";
   }
 
-  promedioArena = acumArena / contArena;
+  promedioArena = acumPrecioArena / contArena;
 
-  console.log("El total en bruto a pagar es de: " + precioTotal + "$, y " + precioDesc);
-  console.log("Se compraron " + acumArena + " bolsas de arena, y un promedio por compra de " + promedioArena);
+  console.log("El total en bruto a pagar es de: " + precioTotal + "$, y " + precioDescuento);
+  console.log("Se compraron " + acumCantidadArena + " bolsas de arena, y un promedio por compra de $" + promedioArena);
   console.log("La bolsa de cal mas cara costo: $ " + masCaro + " y la bolsa de arena mas barata costo: $" + masBarato);
 }
