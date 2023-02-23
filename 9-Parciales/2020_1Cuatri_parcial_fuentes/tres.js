@@ -28,7 +28,7 @@ function mostrar() {
 
 		}
 		sexoIngresado = prompt("Ingrese su sexo (F; M)");
-		while (sexoIngresado != "M" && sexoIngresado != "F") {
+		while (sexoIngresado != "M" && sexoIngresado != "F" && sexoIngresado != "m" && sexoIngresado != "f") {
 			sexoIngresado = prompt("Ingrese correctamente su sexo (F; M)");
 		}
 		estadoCivilIngresado = prompt("Ingrese su estado civil, 1-para soltero; 2-para casado; 3-para divorciados; 4-para viudos");
