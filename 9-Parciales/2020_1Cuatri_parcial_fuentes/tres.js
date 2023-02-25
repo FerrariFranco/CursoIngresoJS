@@ -166,6 +166,7 @@ function mostrar() {
 	let temperaturaMinima;
 	let banderaMinima = true;
 	let nombrePaisMinimo;
+	let mensajeMasHabitantes;
 
 
 	for (i = 0; i < 10; i++) {
@@ -263,18 +264,23 @@ function mostrar() {
 
 	if (acumuladorAfrica > masHabitantes) {
 		masHabitantes = acumuladorAfrica;
+        mensajeMasHabitantes = "El continente con mas habitantes es Africa y tiene: " + masHabitantes + " habitantes";
 	}
 	if (acumuladorAmerica > masHabitantes) {
 		masHabitantes = acumuladorAmerica;
+		mensajeMasHabitantes = "El continente con mas habitantes es America y tiene: " + masHabitantes + " habitantes";
 	}
 	if (acumuladorAsia > masHabitantes) {
 		masHabitantes = acumuladorAsia;
+		mensajeMasHabitantes = "El continente con mas habitantes es Asia y tiene: " + masHabitantes + " habitantes";
 	}
 	if (acumuladorEuropa > masHabitantes) {
 		masHabitantes = acumuladorEuropa;
+		mensajeMasHabitantes = "El continente con mas habitantes es Europa y tiene: " + masHabitantes + " habitantes";
 	}
 	if (acumuladorOceania > masHabitantes) {
 		masHabitantes = acumuladorOceania;
+		mensajeMasHabitantes = "El continente con mas habitantes es Ocenia y tiene: " + masHabitantes + " habitantes";
 	}
 
 
@@ -282,7 +288,7 @@ function mostrar() {
 
 	promedioPaisCalido = acumuladorHabitantes / contPaisesCalidos;
 
-	console.log("El pais con mas habitantes es:", masHabitantes);
+	console.log(mensajeMasHabitantes);
 	console.log("Las temperaturas pares ingresadas han sido un total de " + temperaturaPar);
 	console.log("Las temperaturas impares en europa ingresadas han sido un total de " + temperaturaImpar);
 	console.log("El nombre del pais con menos habitantes es: " + paisMenos);
