@@ -1,6 +1,6 @@
 
 function mostrar() {
-
+/*
     let producto;
     let cantidad;
     let precio;
@@ -109,6 +109,91 @@ function mostrar() {
     alert(mensajeMasUnidades);
     alert("Compro " + acumBar + " unidades de barbijo");
 
+*/
+
+/*Recu 2020 1 bis: "Jugando al Doctor" 
+De 7 personas que ingresan al hospital se deben tomar y validar los siguientes datos:
+nombre, altura, peso y sexo.
+a)Informar la cantidad de personas de sexo femenino. 
+b)La altura promedio en total de pacientes.
+c)El nombre del hombre con menos peso(si lo hay).
+d)De la persona no binaria, el más flaco. 
+Pedir datos por prompt y mostrar por document.write o console.log*/
+
+let nombreIngresado;
+let sexoIngresado;
+let alturaIngresada;
+let pesoIngresado;
+let acumladorAltura = 0;
+let contadorTotal = 0;
+let contFemenino = 0;
+let promedioAlturaSobreTotal;
+let banderaHombres = true;
+let nombreHombre;
+let hombreFlaco;
+let noBinarioFlacoNombre;
+let banderaMasFlaco = true;
+let menorPeso;
+
+
+for (i = 0; i < 3; i++) {
+   nombreIngresado = prompt("Ingrese su nombre");
+   while(!isNaN(parseInt(nombreIngresado))){
+    nombreIngresado = prompt("Ingrese su nombre");
+   }
+   sexoIngresado = prompt("Ingrese su sexo ('f', 'm', 'n')");
+   while(sexoIngresado != "f" && sexoIngresado != "m" && sexoIngresado != "n"){
+    sexoIngresado = prompt("Ingrese su sexo ('f', 'm', 'n')");
+   }
+   alturaIngresada = parseInt(prompt("Ingrese su altura (en centimetros)."));
+   while (isNaN(alturaIngresada) || alturaIngresada > 230 || alturaIngresada < 30) {
+       alturaIngresada = parseInt(prompt("Ingrese su altura (en centimetros)"));
+   }
+   pesoIngresado = parseInt(prompt("Ingrese su peso (en kilos)."));
+   while (isNaN(pesoIngresado) || pesoIngresado > 300 || pesoIngresado < 1) {
+       pesoIngresado = parseInt(prompt("Ingrese su peso (en kilos)"));
+   }
+   
+   acumladorAltura = acumladorAltura + alturaIngresada;
+   contadorTotal = contadorTotal + 1;
+
+   switch(sexoIngresado){
+    case "f":
+        contFemenino = contFemenino + 1;
+        break;  
+    case "n":
+        if (banderaMasFlaco == true) {
+            menorPeso = pesoIngresado;
+            noBinarioFlacoNombre = nombreIngresado;
+            banderaMasFlaco = false;
+        }
+        else if (menorPeso > pesoIngresado) {
+            menorPeso = pesoIngresado;
+            noBinarioFlacoNombre = nombreIngresado;
+        }
+        break;
+    case "m":
+        if (banderaHombres == true) {
+            hombreFlaco = pesoIngresado;
+            nombreHombre = nombreIngresado;
+            banderaHombres = false;
+        }
+        else if (hombreFlaco > pesoIngresado) {
+            hombreFlaco = pesoIngresado;
+            nombreHombre = nombreIngresado;
+        }
+
+   }
+
+   
+
 
 }
-//ACUMULADOR DE UNIDADES DE TIPODEPRODUCTO???
+
+promedioAlturaSobreTotal = acumladorAltura / contadorTotal;
+
+console.log("El total de mujeres ingresadas es de " + contFemenino);
+console.log("La altura promedio es de " + promedioAlturaSobreTotal);
+console.log("El hombre con menos peso fue " + nombreHombre);
+console.log("El no binarie mas flaque es " + noBinarioFlacoNombre);
+}
