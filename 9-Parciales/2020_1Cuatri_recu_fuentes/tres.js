@@ -152,10 +152,111 @@ function mostrar() {
 	d)El total de personas que viajaron a Europa.
 	 */
 
+	let nombreIngresado;
+	let destino;
+	let temporada;
+	let cantidadPasajeros;
+	let contadorBrasil = 0;
+	let contadorCaribe = 0;
+	let contadorEuropa = 0;
+	let promedioPersonas;
+	let acumuladorTemporadaAlta = 0;
+	let acumuladorPasajerosEuropa = 0;
+	let totalPasajeros = 0;
+	let banderaMenosPasajeros = true;
+	let menosPasajeros;
+	let nombreMenosPasajeros;
+	let masElegido = 0;
+	let mensajeMasElegido;
+	let respuesta = "si";
+
+	while (respuesta == "si" || respuesta == "SI" || respuesta == "Si" || respuesta == "sI") {
+
+		nombreIngresado = prompt("Ingrese nombre");
+		while (!isNaN(parseInt(nombreIngresado))) {
+			nombreIngresado = prompt("Ingrese nombre");
+		}
+
+		destino = prompt("Ingrese su destino ('brasil', 'caribe', 'europa')");
+		while (destino != "europa" && destino != "caribe" && destino != "brasil") {
+			destino = prompt("Ingrese su destino ('brasil', 'caribe', 'europa')");
+		}
+
+		temporada = prompt("Ingrese la temporada ('baja', 'media', 'alta')");
+		while (temporada != "alta" && temporada != "media" && temporada != "baja") {
+			temporada = prompt("Ingrese la temporada ('baja', 'media', 'alta')");
+		}
+
+		cantidadPasajeros = parseInt(prompt("Cuantos pasajeros desea ingresar (maximo 15):"));
+		while (isNaN(cantidadPasajeros) || cantidadPasajeros <= 0 || cantidadPasajeros >= 15) {
+			cantidadPasajeros = parseInt(prompt("Cuantos pasajeros desea ingresar (maximo 15):"));
+		}
 
 
-	
+		switch (destino) {
+			case "brasil":
+				contadorBrasil = contadorBrasil + 1;
+				break;
+			case "europa":
+				contadorEuropa = contadorEuropa + 1;
+				acumuladorPasajerosEuropa = acumuladorPasajerosEuropa + cantidadPasajeros;
+				break;
+			default:
+				contadorCaribe = contadorCaribe + 1;
+				break;
+		}
 
+
+		if (temporada == "alta") {
+			acumuladorTemporadaAlta = acumuladorTemporadaAlta + cantidadPasajeros;
+		}
+
+
+
+		if (banderaMenosPasajeros == true) {
+			menosPasajeros = cantidadPasajeros;
+			nombreMenosPasajeros = nombreIngresado;
+			banderaMenosPasajeros = false;
+		}
+		else if (menosPasajeros > cantidadPasajeros) {
+			menosPasajeros = cantidadPasajeros;
+			nombreMenosPasajeros = nombreIngresado;
+		}
+
+
+		totalPasajeros = totalPasajeros + cantidadPasajeros;
+
+		respuesta = prompt("Desea continuar? (coloque Si)");
+
+	}
+
+
+
+
+	if (contadorBrasil > masElegido) {
+		masElegido = contadorBrasil;
+		mensajeMasElegido = "El destino mas elegido fue Brasil  ";
+	}
+	if (contadorEuropa > masElegido) {
+		masElegido = contadorEuropa;
+		mensajeMasElegido = "El destino mas elegido fue Europa ";
+	}
+	if (contadorCaribe > masElegido) {
+		masElegido = contadorCaribe;
+		mensajeMasElegido = "El destino mas elegido fue Caribe ";
+	}
+
+
+
+
+
+	promedioPersonas = totalPasajeros / acumuladorPasajerosEuropa;
+
+
+	console.log(mensajeMasElegido);
+	console.log("El nombre del pasajero titular que ingreso menos pasajeros es: " + nombreMenosPasajeros);
+	console.log("El promedio de personas que viajaron en temporada alta respecto al total fue de: " + promedioPersonas);
+	console.log("El total de personas que viajaron a Europa fue de: " + acumuladorPasajerosEuropa);
 
 
 }
