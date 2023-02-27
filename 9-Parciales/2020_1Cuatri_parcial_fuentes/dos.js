@@ -113,6 +113,10 @@ function mostrar() {
     
     ---------------------------------------------------------------------------------------------------------------------
     */
+
+
+
+
   let animal;
   let edad;
   let acumSiames = 0;
@@ -138,9 +142,10 @@ function mostrar() {
   let contPeterbald = 0
   let promedioMasUnidades;
   let mensajeMasUnidades;
+  let masSolicitado = 0;
 
 
-  for (i = 0; i < 10; i++) {
+  for (i = 0; i < 3; i++) {
     animal = prompt("Que desea ingresar? ('gato', 'perro', 'pajaro' u 'otro')");
     while (animal != "perro" && animal != "gato" && animal != "otro" && animal != "pajaro") {
       animal = prompt("Que animal ingresar?  ('gato', 'perro', 'pajaro' u 'otro')");
@@ -245,29 +250,34 @@ function mostrar() {
 
   }
 
-if (contTurco > contGenerico && contTurco > contSiames) {
-  promedioMasUnidades = acumTurco / contTurco;
-  mensajeMasUnidades = "La raza de gato mas solicitada fue turco y tiene un promedio de edad de:  " + promedioMasUnidades + " años.";
-}
-else if (contGenerico > contTurco && contGenerico > contSiames) {
-  promedioMasUnidades = acumGenerico / contGenerico;
-  mensajeMasUnidades = "La raza de gato mas solicitada fue generico y tiene un promedio de edad de:  " + promedioMasUnidades + " años.";
-}
-else if (contSiames > contTurco && contSiames > contGenerico) {
-  promedioMasUnidades = acumSiames / contSiames;
-  mensajeMasUnidades = "La raza de gato mas solicitada fue siames y tiene un promedio de edad de:  " + promedioMasUnidades + " años.";
-}
-else {
-  promedioMasUnidades = acumPeterbald / contPeterbald;
-  mensajeMasUnidades = "Ha La raza de gato mas solicitada fue peterbald  y tiene un promedio de edad de:  " + promedioMasUnidades + " años. cantidades iguales en 2 o mas animals!"
 
-}
+  if (contSiames > masSolicitado) {
+    masSolicitado = contSiames;
+    promedioMasUnidades = acumSiames / contSiames;
+    mensajeMasUnidades = "La raza de gato mas solicitada fue siames y tiene un promedio de edad de:  " + promedioMasUnidades + " años.";
+  }
+  if (contTurco > masSolicitado) {
+    masSolicitado = contTurco;
+    promedioMasUnidades = acumTurco / contTurco;
+    mensajeMasUnidades = "La raza de gato mas solicitada fue turco y tiene un promedio de edad de:  " + promedioMasUnidades + " años.";
+  }
+  if (contGenerico > masSolicitado) {
+    masSolicitado = contGenerico;
+    promedioMasUnidades = acumGenerico / contGenerico;
+    mensajeMasUnidades = "La raza de gato mas solicitada fue generico y tiene un promedio de edad de:  " + promedioMasUnidades + " años.";
+  }
+  if (contPeterbald > masSolicitado) {
+    masSolicitado = contPeterbald;
+    promedioMasUnidades = acumPeterbald / contPeterbald;
+    mensajeMasUnidades = "Ha La raza de gato mas solicitada fue peterbald  y tiene un promedio de edad de:  " + promedioMasUnidades + " años. cantidades iguales en 2 o mas animals!"
+  }
 
-console.log("El gato mas viejo es: " + nombreGatoViejo);
-console.log("El Perro mas viejo es: " + nombrePerroViejo);
-console.log("El Pajaro mas viejo es: " + nombrePajaroMasViejo);
-console.log("El Otro mas viejo es: " + nombreOtroViejo);
-console.log(mensajeMasUnidades);
+
+  console.log("El gato mas viejo es: " + nombreGatoViejo);
+  console.log("El Perro mas viejo es: " + nombrePerroViejo);
+  console.log("El Pajaro mas viejo es: " + nombrePajaroMasViejo);
+  console.log("El Otro mas viejo es: " + nombreOtroViejo);
+  console.log(mensajeMasUnidades);
 
 
 
