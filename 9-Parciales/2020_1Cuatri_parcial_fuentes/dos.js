@@ -141,7 +141,7 @@ function mostrar() {
   let contGenerico = 0;
   let contPeterbald = 0
   let promedioMasUnidades;
-  let mensajeMasUnidades;
+  let mensajeMasUnidades = "No ingreso ningun gato.";
   let masSolicitado = 0;
 
 
