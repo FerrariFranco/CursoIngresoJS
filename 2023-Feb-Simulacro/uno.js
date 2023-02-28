@@ -28,7 +28,6 @@ function mostrar() {
     let promedioFinalizantes = 0;
     let notasFinalizantes = 0;
     let contadorFinalizantes = 0;
-    let banderaMasViejo = true;
     let masViejo;
     let nombreMasViejo;
     let sexoMasViejo;
@@ -36,6 +35,7 @@ function mostrar() {
     let nombreMejorNoBinario;
     let notaNobinario;
     let estadoCarreraNoBinario;
+    let masAlumnos;
 
     while (respuesta == "si" || respuesta == "SI" || respuesta == "Si" || respuesta == "sI") {
 
@@ -44,40 +44,54 @@ function mostrar() {
             nombreIngresado = prompt("Ingrese un nombre valido.");
         }
 
-        sexoIngresado = prompt("Ingrese el sexo del alumno ('m', 'f', 'n')");
+        sexoIngresado = prompt("Ingrese el sexo del alumno (masculino = 'm', femenino = 'f', no binario = 'n')");
         while (sexoIngresado != "f" & sexoIngresado != "m" && sexoIngresado != "n") {
-            sexoIngresado = prompt("Ingrese el sexo del alumno ('m', 'f', 'n')");
+            sexoIngresado = prompt("ERROR Ingrese un sexo valido del alumno (masculino = 'm', femenino = 'f', no binario = 'n')");
         }
 
         edadIngresada = parseInt(prompt("Ingrese la edad del alumno"));
-        while (isNaN(edadIngresada) || edadIngresada > 110 || edadIngresada < 17) {
-            edadIngresada = parseInt(prompt("Ingrese la edad del alumno"));
+        while (isNaN(edadIngresada) || edadIngresada > 110 || edadIngresada < 18) {
+            edadIngresada = parseInt(prompt("ERR0R Ingrese la edad del alumno correctamente (mayor de edad))"));
         }
 
         carrera = prompt("Ingrese la carrera curzante ('programacion', 'psicologia', 'diseño grafico')");
         while (carrera != "programacion" & carrera != "diseño grafico" && carrera != "psicologia") {
-            carrera = prompt("Ingrese la carrera curzante ('programacion', 'psicologia', 'diseño grafico')");
+            carrera = prompt("ERROR Ingrese una carrera valida ('programacion', 'psicologia', 'diseño grafico')");
         }
 
         estadoCarrera = prompt("Ingrese el estado de la carrera ('curso', 'abandono', 'finalizado')");
         while (estadoCarrera != "curso" & estadoCarrera != "finalizado" && estadoCarrera != "abandono") {
-            estadoCarrera = prompt("Ingrese el estado de la carrera ('curso', 'abandono', 'finalizado')");
+            estadoCarrera = prompt("ERROR Ingrese CORRECTAMENTE el estado de la carrera ('curso', 'abandono', 'finalizado')");
         }
 
         nota = parseInt(prompt("Ingrese la nota"));
-        while (isNaN(nota) || nota > 11 || nota < 0) {
-            nota = parseInt(prompt("Ingrese la nota"));
+        while (isNaN(nota) || nota > 10 || nota < 1) {
+            nota = parseInt(prompt("ERROR Ingrese la nota (entre 1 y 10)"));
         }
 
         switch (carrera) {
             case "programacion":
                 contadorProgramacion = contadorProgramacion + 1
-                if (sexoIngresado == "f") {
-                    contMujeresProgramacion = contMujeresProgramacion + 1
+                if (sexoIngresado == "f" && estadoCarrera == "curso") {
+                    contMujeresProgramacion = contMujeresProgramacion + 1;
                 }
                 break;
 
             case "psicologia":
+
+                if (contadorPsicologia == 0 || masViejo > edadIngresada) {
+                    masViejo = edadIngresada;
+                    nombreMasViejo = nombreIngresado;
+                    sexoMasViejo = sexoIngresado
+                }
+
+
+                if (banderaMejorNoBinario == true || (sexoIngresado == "n" && notaNobinario > nota)) {
+                    notaNobinario = nota;
+                    nombreMejorNoBinario = nombreIngresado;
+                    estadoCarreraNoBinario = estadoCarrera
+                    banderaMejorNoBinario = false;
+                }
                 contadorPsicologia = contadorPsicologia + 1
                 break;
 
@@ -87,51 +101,38 @@ function mostrar() {
         }
 
 
-        switch (sexoIngresado) {
-            case "n":
-                contadorNoBinarios = contadorNoBinarios + 1;
-                if (banderaMejorNoBinario == true) {
-                    notaNobinario = nota;
-                    nombreMejorNoBinario = nombreIngresado;
-                    estadoCarreraNoBinario = estadoCarrera
-                    banderaMejorNoBinario = false;
-                }
-                else if (notaNobinario > nota) {
-                    notaNobinario = nota;
-                    nombreMejorNoBinario = nombreIngresado;
-                    estadoCarreraNoBinario = estadoCarrera
-                }
-
-                break;
+        if (sexoIngresado == "n") {
+            contadorNoBinarios = contadorNoBinarios + 1;
         }
 
-        switch (estadoCarrera) {
-            case "finalizado":
-                notasFinalizantes = notasFinalizantes + nota;
-                contadorFinalizantes = contadorFinalizantes + 1;
-                break;
-
+        if (estadoCarrera == "finalizado") {
+            notasFinalizantes = notasFinalizantes + nota;
+            contadorFinalizantes = contadorFinalizantes + 1;
         }
 
-        if (banderaMasViejo == true) {
-            masViejo = edadIngresada;
-            nombreMasViejo = nombreIngresado;
-            sexoMasViejo = sexoIngresado
-            banderaMasViejo = false;
-        }
-        else if (masViejo > edadIngresada) {
-            masViejo = edadIngresada;
-            nombreMasViejo = nombreIngresado;
-            sexoMasViejo = sexoIngresado
-        }
 
 
         respuesta = prompt("Desea continuar? escriba 'si'")
     }
 
 
-    promedioFinalizantes = notasFinalizantes / contadorFinalizantes;
 
+    if (contadorDiseño > contadorProgramacion && contadorDiseño > contadorPsicologia) {
+        masAlumnos = "La carrera con mas alumnos es Diseño Grafico"
+    } else if (contadorProgramacion > contadorPsicologia) {
+        masAlumnos = "La carrera con mas alumnos es Programacion"
+    } else {
+        masAlumnos = "La carrera con mas alumnos es Psicologia "
+    }
+
+
+
+    if (contadorFinalizantes != 0) {
+        promedioFinalizantes = notasFinalizantes / contadorFinalizantes;
+    }
+    else {
+        promedioFinalizantes = 0;
+    }
 
     console.log("La cantidad total de alumnos en progamacion es de: " + contadorProgramacion);
     console.log("La cantidad total de alumnos en psicologia es de: " + contadorPsicologia);
@@ -141,6 +142,7 @@ function mostrar() {
     console.log("El promedio de nota entre los finalizantes es de: " + promedioFinalizantes);
     console.log("El nombre de la persona mas vieja es: " + nombreMasViejo + " su sexo es " + sexoMasViejo + " y su edad es " + masViejo);
     console.log("El nombre de la persona no binaria con mejor nota es: " + nombreMejorNoBinario + " su estado de carrera es " + estadoCarreraNoBinario + " y su nota es " + notaNobinario);
+    console.log(masAlumnos);
 
 }//fin de funcion
 /*
