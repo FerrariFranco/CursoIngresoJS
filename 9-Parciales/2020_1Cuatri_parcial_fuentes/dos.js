@@ -172,6 +172,7 @@ function mostrar() {
           nombrePerroViejo = nombre;
         }
         break;
+
       case "gato":
         raza = prompt("Que raza desea ingresar? ('siames', 'turco', 'peterbald', o 'generico')");
         while (raza != "siames" & raza != "turco" && raza != "peterbald" && raza != "generico") {
@@ -198,6 +199,7 @@ function mostrar() {
             contGenerico = contGenerico + 1;
             acumGenerico = acumGenerico + edad;
         }
+
         nombre = prompt("Ingrese el nombre de la mascota");
         if (banderaGato == true) {
           gatoMasViejo = edad;
@@ -209,6 +211,8 @@ function mostrar() {
           nombreGatoViejo = nombre;
         }
         break;
+
+
       case "pajaro":
         raza = prompt("Que raza desea ingresar?");
         edad = parseInt(prompt("Ingrese edad de su pajaro."));
@@ -269,7 +273,7 @@ function mostrar() {
   if (contPeterbald > masSolicitado) {
     masSolicitado = contPeterbald;
     promedioMasUnidades = acumPeterbald / contPeterbald;
-    mensajeMasUnidades = "Ha La raza de gato mas solicitada fue peterbald  y tiene un promedio de edad de:  " + promedioMasUnidades + " años. cantidades iguales en 2 o mas animals!"
+    mensajeMasUnidades = "Ha La raza de gato mas solicitada fue peterbald  y tiene un promedio de edad de:  " + promedioMasUnidades + " años."
   }
 
 
